@@ -2,7 +2,6 @@
 
 # Overview
 - [Introduction](./overview.md)
-- [How to use this book]()
 
 # Let's get started
 - [Introduction to Kubernetes](./start/intro-to-k8s.md)

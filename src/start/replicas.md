@@ -6,21 +6,21 @@
 
 # Learning Resources
 
-TODO
+- [Kubernetes ReplicaSet official documentation](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)
 
 # Example Notes
 
 **ReplicaSets**
 
-A ReplicaSet ensures that a certain number of pods are running at any point in time.If there are more pods running, the ReplicaSet will kill the pods.
+It is usually not recommended to create pods manually but instead use multiple instances of the same application; these are then identical pods, called replicas. You can specify the desired number of replicas within the ReplicaSet.
 
-Additionally, if any pod dies and the total number of pods is fewer than the defined number of pods, the ReplicaSet will spin up more pods.
+A ReplicaSet ensures that a certain number of pods are running at any point in time. If there are more pods running than the number specified by the ReplicaSet, the ReplicaSet will kill the pods.
+
+Similarly, if any pod dies and the total number of pods is fewer than the defined number of pods, the ReplicaSet will spin up more pods.
 
 Each pod is supposed to run a single instance of an application. If you want to scale your application horizontally, you can create multiple instances of that pod.
 
 The pod ReplicaSet is used for scaling pods in your Kubernetes cluster.
-
-It is usually not recommended to create pods manually but instead use multiple instances of the same application; these are then identical pods, called replicas.
 
 **Such a set of replicated Pods are created and managed by a controller, such as a Deployment.**
 
@@ -28,11 +28,11 @@ As long as the primary conditions are met: enough CPU and memory is available in
 
 It's only purpose is to ensure that the specified number of replicas of a service is running.
 
-All pods are managed through Controllers and Services. They know about the pods that they have to manage through the in-yaml defined Labels within the pods and the selectors within the Controllers/Services. Remember the metadata field from one of the previous days — in the case of ReplicaSets, these labels are used again.
+All pods are managed through Controllers and Services. They know about the pods that they have to manage through the in-YAML defined Labels within the pods and the selectors within the Controllers/Services. Remember the metadata field from one of the previous days — in the case of ReplicaSets, these labels are used again.
 
-Clone the repository
+## Some Practice
 
-enter into the root folder
+Clone the following repository: [https://github.com/vfarcic/k8s-specs](https://github.com/vfarcic/k8s-specs) and enter into the root folder
 
 ```jsx
 cd k8s-specs

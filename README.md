@@ -21,10 +21,10 @@ Prerequisites
 - install [mdBook](https://github.com/rust-lang/mdBook)
 
 Run 
-'''
+```
 mdbook build
 mdbook serve
-'''
+```
 
 Now you should be able to open the book on http://localhost:3000/
 

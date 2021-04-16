@@ -19,8 +19,6 @@ Let's get moving, you only learn by doing.
 
 Clone this repository [https://github.com/vfarcic/k8s-specs](https://github.com/vfarcic/k8s-specs) 
 
-Also, have a look at his YouTube channel [https://www.youtube.com/channel/UCfz8x0lVzJpb_dgWm9kPVrw](https://www.youtube.com/channel/UCfz8x0lVzJpb_dgWm9kPVrw)
-
 ```jsx
 cd k8s-specs
 ```

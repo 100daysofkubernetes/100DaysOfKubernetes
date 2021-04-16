@@ -6,7 +6,7 @@
 
 # Learning Resources
 
-TODO
+- [Kubernetes Deployments official documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
 
 # Example Notes
 
@@ -45,7 +45,7 @@ More information on Kubernetes deployments
 - If you try to set-up pods manually, it can lead to human error, using deployments
 - The difference between a deployment and a service is that a deployment ensures that a set of pods keeps running by creating pods and replacing broken prods with the resource defined in the template. In comparison, a service is used to allow a network to access the running pods.
 
-[deployments allow you to](https://www.redhat.com/en/topics/containers/what-is-kubernetes-deployment)
+[Deployments allow you to](https://www.redhat.com/en/topics/containers/what-is-kubernetes-deployment)
 
 - Deploy a replica set or pod
 - Update pods and replica sets

@@ -28,6 +28,39 @@ Additionally, creating your own content based on what you are learning can be hi
 
 The goal is to make this a community-driven project.
 
+## Contribute
+
+You can find more information on contributions in the README of this GitHub repository.
+
+## Structure of  the book
+
+The book is divided into several higher-level topics. Each topic has several sub-topics that are individual pages or chapters.
+
+Thos chapters have a similar structure:
+
+**Title**
+
+The title of the page
+
+**100Days Resources**
+
+This section highlights a list of community resources specific to the topics that is introduced.
+Additionally, this is where you can include your own content, videos and blog articles, from your 100DaysOfKubernetes challenge.
+
+**Learning Resources**
+
+A list of related learning resources. Different to '100Days Resources', these do not have to be specific to 100DaysOfKubernetes.
+
+**Example Notes**
+
+This section provides an introduction to the topics. The goal is to advance each topics over time. 
+When you are first time learning about a topic, it is usually best to take your own notes but sometimes having a starting point and examples is helpful.
+
 ## Join the community 
 
 We have a channel in this [Discord channel](https://discord.gg/bs2sy3Ppm7) -- come say hi, ask questions, and contribute!
+
+## List of Example Notes by the Community
+
+- [Anais Urlichs' public Notion](https://devops.anaisurl.com/kubernetes)
+- [Rishab Kumar's GitHub repository](https://github.com/rishabkumar7/LearningKubernetes)

@@ -5,7 +5,7 @@
 * Add your blog posts, videos etc. related to the topic here!
 
 # Learning Resources
-TODO
+- [https://matthewpalmer.net/kubernetes-app-developer/articles/ultimate-configmap-guide-kubernetes.html](https://matthewpalmer.net/kubernetes-app-developer/articles/ultimate-configmap-guide-kubernetes.html)
 
 # Example Notes
 
@@ -174,9 +174,5 @@ spec:
            mountPath: /etc/config
 ```
 
-## Source
 
-- [https://matthewpalmer.net/kubernetes-app-developer/articles/ultimate-configmap-guide-kubernetes.html](https://matthewpalmer.net/kubernetes-app-developer/articles/ultimate-configmap-guide-kubernetes.html)
-- The chapter on ConfigMaps from the book
 
-[https://www.notion.so/researchandstudy/100DaysOfKubernetes-0c1e0de84d654e59bdf89242195abb22#61ff3e00dd2c4669aa7ae4e988c70915](https://www.notion.so/researchandstudy/100DaysOfKubernetes-0c1e0de84d654e59bdf89242195abb22#61ff3e00dd2c4669aa7ae4e988c70915)
