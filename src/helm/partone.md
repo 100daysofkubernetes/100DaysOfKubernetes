@@ -8,6 +8,7 @@
 - [https://codefresh.io/helm-tutorial/getting-started-with-helm-3/](https://codefresh.io/helm-tutorial/getting-started-with-helm-3/)
 - [https://helm.sh/docs/intro/install/](https://helm.sh/docs/intro/install/)
 - [https://github.com/cdwv/awesome-helm](https://github.com/cdwv/awesome-helm)
+- Tutorial with Helm example deployments with [Mr Podtato Head](https://github.com/cncf/podtato-head)
 
 # Example Notes
 
@@ -185,5 +186,5 @@ To remove a chart use
 helm uninstall <name of the chart>
 ```
 
-In the next video, we are going to look at ways that you can customize your chart.
+In the next section, we are going to look at ways that you can customize your chart.
 

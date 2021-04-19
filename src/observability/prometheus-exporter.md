@@ -5,7 +5,7 @@
 * Add your blog posts, videos etc. related to the topic here!
 
 # Learning Resources
-TODO
+- [Setup Prometheus Monitoring on Kubernetes using Helm and Prometheus Operator | Part 1](https://youtu.be/QoDqxm7ybLc)
 
 # Example Notes
 
@@ -13,7 +13,7 @@ TODO
 
 First off, we are going to follow the commands provided in the previous day — Day 28 — on Prometheus to have our Helm Chart with all the Prometheus related resources installed.
 
-[Day 28: What is Prometheus](https://www.notion.so/Day-28-What-is-Prometheus-a05167f73d67446784dc01b8c2e895d8)
+[Day 28: What is Prometheus](prometheus.md)
 
 ## Have a look at the Prometheus Resources to understand those better
 
