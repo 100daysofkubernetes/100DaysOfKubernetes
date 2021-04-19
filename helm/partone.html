@@ -1,0 +1,352 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Helm Part 1 - 100 Days Of Kubernetes</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Overview</li><li class="chapter-item expanded "><a href="../overview.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../contributors.html"><strong aria-hidden="true">2.</strong> Contributors</a></li><li class="chapter-item expanded affix "><li class="part-title">Let's get started</li><li class="chapter-item expanded "><a href="../start/intro-to-k8s.html"><strong aria-hidden="true">3.</strong> Introduction to Kubernetes</a></li><li class="chapter-item expanded "><a href="../start/architecture-overview.html"><strong aria-hidden="true">4.</strong> Kubernetes Architecture</a></li><li class="chapter-item expanded "><a href="../start/pods.html"><strong aria-hidden="true">5.</strong> Kubernetes Pods</a></li><li class="chapter-item expanded "><a href="../start/set-up-cluster.html"><strong aria-hidden="true">6.</strong> Setup Kubernetes Cluster</a></li><li class="chapter-item expanded "><a href="../start/run-pod.html"><strong aria-hidden="true">7.</strong> Run Pods</a></li><li class="chapter-item expanded "><a href="../start/replicas.html"><strong aria-hidden="true">8.</strong> Replica Set</a></li><li class="chapter-item expanded "><a href="../start/deployment.html"><strong aria-hidden="true">9.</strong> Kubernetes Deployment</a></li><li class="chapter-item expanded "><a href="../start/namespaces.html"><strong aria-hidden="true">10.</strong> Namespaces</a></li><li class="chapter-item expanded "><a href="../start/configmaps.html"><strong aria-hidden="true">11.</strong> ConfigMaps</a></li><li class="chapter-item expanded affix "><li class="part-title">Networking</li><li class="chapter-item expanded "><a href="../networking/service.html"><strong aria-hidden="true">12.</strong> Kubernetes Service</a></li><li class="chapter-item expanded "><a href="../networking/ingress.html"><strong aria-hidden="true">13.</strong> Kubernetes Ingress</a></li><li class="chapter-item expanded "><a href="../networking/servicemesh.html"><strong aria-hidden="true">14.</strong> Service Mesh</a></li><li class="chapter-item expanded affix "><li class="part-title">Storage</li><li class="chapter-item expanded "><a href="../storage/volumes.html"><strong aria-hidden="true">15.</strong> Kubernetes Volumes</a></li><li class="chapter-item expanded affix "><li class="part-title">Kubernetes Clusters Overview and Use</li><li class="chapter-item expanded "><a href="../kubernetes-clusters/kind.html"><strong aria-hidden="true">16.</strong> KinD Cluster</a></li><li class="chapter-item expanded "><a href="../kubernetes-clusters/k3s.html"><strong aria-hidden="true">17.</strong> K3s and K3sup</a></li><li class="chapter-item expanded affix "><li class="part-title">Templating & IaC</li><li class="chapter-item expanded "><a href="../templating/kustomize.html"><strong aria-hidden="true">18.</strong> Kustomize</a></li><li class="chapter-item expanded "><a href="../templating/terraform.html"><strong aria-hidden="true">19.</strong> Terraform</a></li><li class="chapter-item expanded "><a href="../templating/crossplane.html"><strong aria-hidden="true">20.</strong> Crossplane</a></li><li class="chapter-item expanded affix "><li class="part-title">Helm</li><li class="chapter-item expanded "><a href="../helm/partone.html" class="active"><strong aria-hidden="true">21.</strong> Helm Part 1</a></li><li class="chapter-item expanded "><a href="../helm/partwo.html"><strong aria-hidden="true">22.</strong> Helm Part 2</a></li><li class="chapter-item expanded "><a href="../helm/partthree.html"><strong aria-hidden="true">23.</strong> Helm Part 3</a></li><li class="chapter-item expanded affix "><li class="part-title">Cloud Native Tools and Platforms</li><li class="chapter-item expanded "><a href="../tools/k9s.html"><strong aria-hidden="true">24.</strong> k9s</a></li><li class="chapter-item expanded "><a href="../tools/knative.html"><strong aria-hidden="true">25.</strong> Knative</a></li><li class="chapter-item expanded "><a href="../tools/argo.html"><strong aria-hidden="true">26.</strong> GitOps and Argo</a></li><li class="chapter-item expanded affix "><li class="part-title">Observability</li><li class="chapter-item expanded "><a href="../observaility/prometheus.html"><strong aria-hidden="true">27.</strong> Prometheus</a></li><li class="chapter-item expanded "><a href="../observability/prometheus-exporter.html"><strong aria-hidden="true">28.</strong> Prometheus Exporter</a></li><li class="chapter-item expanded affix "><li class="part-title">Advanced Topics</li><li class="chapter-item expanded "><a href="../advanced/operators.html"><strong aria-hidden="true">29.</strong> Kubernetes Operators</a></li><li class="chapter-item expanded affix "><li class="part-title">Tutorials and Practice</li><li class="chapter-item expanded "><a href="../tutorials/serverless.html"><strong aria-hidden="true">30.</strong> Serverless</a></li><li class="chapter-item expanded "><a href="../tutorials/ingress-from-scratch.html"><strong aria-hidden="true">31.</strong> Ingress from scratch</a></li><li class="chapter-item expanded "><a href="../tutorials/istio-from-scratch.html"><strong aria-hidden="true">32.</strong> Istio from scratch</a></li><li class="chapter-item expanded affix "><li class="part-title">Troubleshooting K8s</li><li class="chapter-item expanded "><a href="../troubleshooting/crashloopbackoff.html"><strong aria-hidden="true">33.</strong> CrashLoopBackOff</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">100 Days Of Kubernetes</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="helm"><a class="header" href="#helm">Helm</a></h1>
+<h1 id="100days-resources"><a class="header" href="#100days-resources">100Days Resources</a></h1>
+<ul>
+<li><a href="https://youtu.be/hOaA_VYhKV8">Video by Anais Urlichs</a></li>
+<li>Add your blog posts, videos etc. related to the topic here!</li>
+</ul>
+<h1 id="learning-resources"><a class="header" href="#learning-resources">Learning Resources</a></h1>
+<ul>
+<li><a href="https://codefresh.io/helm-tutorial/getting-started-with-helm-3/">https://codefresh.io/helm-tutorial/getting-started-with-helm-3/</a></li>
+<li><a href="https://helm.sh/docs/intro/install/">https://helm.sh/docs/intro/install/</a></li>
+<li><a href="https://github.com/cdwv/awesome-helm">https://github.com/cdwv/awesome-helm</a></li>
+<li>Tutorial with Helm example deployments with <a href="https://github.com/cncf/podtato-head">Mr Podtato Head</a></li>
+</ul>
+<h1 id="example-notes"><a class="header" href="#example-notes">Example Notes</a></h1>
+<p>In its simplest form, Helm is a package manager for Kubernetes. It is basically used to manage Kubernetes Applications through Helm templates. </p>
+<p>The combination of Helm templates and values is called a Helm Chart</p>
+<p>The goal: Make Kubernetes resources more accessible.</p>
+<p>Helm 3 is SUPER different from Helm 2 — NO MORE TILLER 
+For more information, please refer to this guide.</p>
+<p>Each release goes through multiple stages, including its installation, upgrade, removal, and rollback. With Helm, you can group multiple microservices together and treat them as one entity. You can either create your own chart or use an existing one from Helm Artifact Hub. Once your application is packaged into a Helm chart, it can easily be shared and deployed on Kubernetes. <a href="https://codefresh.io/helm-tutorial/getting-started-with-helm-3/">Source</a></p>
+<p><strong>Charts make it super easy to:</strong></p>
+<ul>
+<li>Create Kubernetes Manifests,</li>
+<li>Version your Kubernetes resources</li>
+<li>Share your resources</li>
+<li>And publish your resources</li>
+</ul>
+<p>&quot;Helm is a graduated project in the CNCF and is maintained by the Helm community.&quot;</p>
+<p>You can also reuse existing charts, there is a separate site for Helm Charts <a href="https://artifacthub.io/">https://artifacthub.io/</a></p>
+<p>Imagine this to be similar to the Docker Hub — just for Kubernetes in Chart format (don't quote me on this please)</p>
+<p><strong>What you need to use Helm:</strong></p>
+<ol>
+<li>A machine</li>
+<li>Kubernetes — kubectl installed</li>
+<li>A Kubernetes cluster (ANY cluster should be fine for our purposes)</li>
+<li>Install Helm</li>
+<li>USE Helm</li>
+</ol>
+<p><strong>Who would I recommend to use Helm</strong></p>
+<ol>
+<li>If you are a completely beginner — you don't have to know Kubernetes — take complex business knowledge, pack it up so that other people can use it</li>
+<li>If you are going advanced</li>
+<li>Not necessarily for HUGE applications</li>
+</ol>
+<h2 id="we-are-using-helm"><a class="header" href="#we-are-using-helm">We are using Helm</a></h2>
+<p>To install Helm, head over to the </p>
+<ul>
+<li>Installation Guide: <a href="https://helm.sh/docs/intro/install/">https://helm.sh/docs/intro/install/</a></li>
+</ul>
+<p>Ensure that Helm is actually available on your machine:</p>
+<pre><code class="language-jsx">helm version
+</code></pre>
+<p>Now, you can get started super easy just by running</p>
+<pre><code class="language-jsx">mkdir charts
+
+cd charts
+
+helm create example-chart
+</code></pre>
+<p>This will create a basic Helm boiler template. Have a look at the presentation that walked through the different files that we have within that Helm chart.</p>
+<p><strong>The Chart Structure</strong></p>
+<p>Now before we actually install our Helm Chart, we want to make sure that it is all set-up properly</p>
+<pre><code class="language-jsx">helm install --dry-run --debug example-chart ./example-chart
+</code></pre>
+<p>This will populate our templates with Kubernetes manifests and display those within the console. The benefit is that if you are already familiar with Kubernetes manifests, you will be able to cross-check the Kubernetes resource — and, if needed, make changes to your Kubernetes resources.</p>
+<p>Once we are happy with what Helm will create, we can run:</p>
+<pre><code class="language-jsx">helm install example-chart ./example-chart
+</code></pre>
+<p>Note that in this case, the name of my chart is &quot;example-chart&quot; you can name your chart however, you want to; just make sure that your are specifying the right path to your Helm chart.</p>
+<p>Now we can have a look at the installed chart:</p>
+<pre><code class="language-jsx">helm ls
+</code></pre>
+<p>And the history of events of our installed Chart:</p>
+<pre><code class="language-jsx">helm history example-chart
+</code></pre>
+<p>If you are using Helm for your deployments, you want to store your Helm charts within a Helm repository. This will allow you to access your Helm charts over time. </p>
+<p>Once you have deployed a Helm Chart, you can also upgrade it with new values</p>
+<pre><code class="language-jsx">helm upgrade [RELEASE] [CHART] [flags]
+</code></pre>
+<p>To remove our example chart:</p>
+<pre><code class="language-jsx">helm delete example-chart
+</code></pre>
+<h2 id="second-helm-exercise"><a class="header" href="#second-helm-exercise">Second Helm Exercise</a></h2>
+<h3 id="helm-commands"><a class="header" href="#helm-commands">Helm Commands</a></h3>
+<p>Search for all helm repositories on the helm hub: <a href="https://artifacthub.io/">https://artifacthub.io/</a></p>
+<pre><code class="language-jsx">helm search hub
+</code></pre>
+<p>Add a repositories</p>
+<pre><code class="language-jsx">helm repo add &lt;name&gt; &lt;repository link&gt;
+e.g. helm repo add bitnami https://charts.bitnami.com/bitnami
+</code></pre>
+<p>From <a href="https://artifacthub.io/packages/helm/bitnami/mysql">https://artifacthub.io/packages/helm/bitnami/mysql</a></p>
+<p>List repositories all repositories that you have installed</p>
+<pre><code class="language-jsx">helm repo list
+</code></pre>
+<p>Search within a repository</p>
+<pre><code class="language-jsx">helm search repo &lt;name&gt;
+</code></pre>
+<p>Instead of using the commands, you can also search the chart repository online.</p>
+<p>To upgrade the charts in your repositories</p>
+<pre><code class="language-jsx">helm repo update
+</code></pre>
+<p>Install a specific chart repository</p>
+<pre><code class="language-jsx">helm install stable/mysql --generate-name
+
+</code></pre>
+<p>Note that you can either ask Helm to generate a name with the —generate-name flag,</p>
+<p>or you can provide the name that you want to give the chart by defining it after install</p>
+<pre><code class="language-jsx">helm install say-my-name stable/mysql
+</code></pre>
+<p>Check the entities that got deployed within a specific cluster:</p>
+<p>List all the charts that you have deployed with the following command</p>
+<pre><code class="language-jsx">helm ls
+</code></pre>
+<p>To remove a chart use</p>
+<pre><code class="language-jsx">helm uninstall &lt;name of the chart&gt;
+</code></pre>
+<p>In the next section, we are going to look at ways that you can customize your chart.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../templating/crossplane.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../helm/partwo.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../templating/crossplane.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../helm/partwo.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
