@@ -4,3 +4,8 @@ authors = ["Anais Urlichs"]
 language = "en"
 multilingual = false
 src = "src"
+
+[output.html]
+mathjax-support = true
+site-url = "/overview.html/"
+git-repository-url = "https://github.com/100daysofkubernetes/100DaysOfKubernetes"
