@@ -5,13 +5,11 @@
 * Add your blog posts, videos etc. related to the topic here!
 
 # Learning Resources
-TODO
+- [Official Documentation](https://kind.sigs.k8s.io/)
 
 # Example Notes
 
 ## Setting up Kind on Windows and Cluster Comparison
-
-So, I just got started setting up everything on Windows since Ubuntu provides me with some limitations regarding my streaming set-up (also, I got bullied away from Ubuntu) so here I am making the best out of Windows 😁
 
 These are the docs that I used to set-up all of my resources on Windows:
 

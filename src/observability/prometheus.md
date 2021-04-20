@@ -7,8 +7,8 @@
 # Learning Resources
 - Overview video [https://youtu.be/nk3sk1LO7Bo](https://youtu.be/nk3sk1LO7Bo) quick
 - Overview video [https://youtu.be/sYMTY-SciUQ](https://youtu.be/sYMTY-SciUQ) long
-- The Prometheus documentation
-- The Grafana documentation
+- The Prometheus [documentation](https://prometheus.io/docs/introduction/overview/)
+- The Grafana [documentation](https://grafana.com/docs/?plcmt=top-nav&cta=downloads)
 - Have a look at the different yaml files that encompass Pormetheus [https://phoenixnap.com/kb/prometheus-kubernetes-monitoring](https://phoenixnap.com/kb/prometheus-kubernetes-monitoring)
 - Challenges using Prometheus at scale [https://sysdig.com/blog/challenges-scale-prometheus/](https://sysdig.com/blog/challenges-scale-prometheus/)
 - Another quick tutorial [https://dev.to/rayandasoriya/kubernetes-monitoring-with-prometheus-2l7k](https://dev.to/rayandasoriya/kubernetes-monitoring-with-prometheus-2l7k)

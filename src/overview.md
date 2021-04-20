@@ -28,9 +28,21 @@ Additionally, creating your own content based on what you are learning can be hi
 
 The goal is to make this a community-driven project.
 
+### Where to get started
+
+**Fork the example repository**
+We suggest you to fork the journey repository. Every day that you work on the challenge, you can make changes to the repository to detail what you have been up to.
+The progress will then be tracked on your GitHub.
+
+**Tweet about your progress**
+Share your learnings and progress with the [#100DaysOfKubernetes](https://twitter.com/search?q=%23100DaysOfKubernetes&src=typed_query&f=live) on Twitter.
+
+**Join the community**
+We have a channel in this [Discord channel](https://discord.gg/bs2sy3Ppm7) -- come say hi, ask questions, and contribute!
+
 ## Contribute
 
-You can find more information on contributions in the README of this GitHub repository.
+You can find more information on contributions in the [README](https://github.com/100daysofkubernetes/100DaysOfKubernetes) of this GitHub repository.
 
 ## Structure of  the book
 
@@ -55,10 +67,6 @@ A list of related learning resources. Different to '100Days Resources', these do
 
 This section provides an introduction to the topics. The goal is to advance each topics over time. 
 When you are first time learning about a topic, it is usually best to take your own notes but sometimes having a starting point and examples is helpful.
-
-## Join the community 
-
-We have a channel in this [Discord channel](https://discord.gg/bs2sy3Ppm7) -- come say hi, ask questions, and contribute!
 
 ## List of Example Notes by the Community
 

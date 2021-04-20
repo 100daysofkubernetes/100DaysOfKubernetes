@@ -2,6 +2,7 @@
 
 # Overview
 - [Introduction](./overview.md)
+- [Contributors](./contributors.md)
 
 # Let's get started
 - [Introduction to Kubernetes](./start/intro-to-k8s.md)

@@ -5,7 +5,9 @@
 * Add your blog posts, videos etc. related to the topic here!
 
 # Learning Resources
-TODO
+- [Overview README](https://github.com/k3s-io/k3s/blob/master/README.md)
+- [Website](https://k3s.io/)
+- [Documentation](https://rancher.com/docs/k3s/latest/en/)
 
 # Example Notes
 

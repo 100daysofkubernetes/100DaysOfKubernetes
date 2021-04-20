@@ -5,14 +5,17 @@
 * Add your blog posts, videos etc. related to the topic here!
 
 # Learning Resources
-
-TODO
+- [Official Documentation](https://kubernetes.io/docs/concepts/services-networking/service/)
+- [https://kubernetes.io/docs/reference/kubectl/cheatsheet/](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+- [https://katacoda.com/courses/kubernetes](https://katacoda.com/courses/kubernetes)
+- Guides and interactive tutorial within the Kubernetes docs [https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/)
+- Kubernetes by example [https://kubernetesbyexample.com/](https://kubernetesbyexample.com/) created by OpenShift
 
 # Example Notes
 
 Pods are formed, destroyed and never repaired. You would not repair an existing, running pod but rather deploy a new, healthy one.
 
-Controllers, along with the Scheduler are making sure that pods are behaving correctly, they are monitoring the pods. 
+Controllers, along with the Scheduler inside your Kubernetes cluster are making sure that pods are behaving correctly, they are monitoring the pods. 
 
 So far, only containers within the same pod can talk to each other through localhost. This prevents us from scaling our application. Thus we want to enable communication between pods. This is done with Kubernetes Services.
 
@@ -136,12 +139,3 @@ kubectl delete -f svc/go-demo-2-svc.yml
 
 kubectl delete -f svc/go-demo-2-rs.yml
 ```
-
-# Execises
-
-Content to practice
-
-- [https://kubernetes.io/docs/reference/kubectl/cheatsheet/](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
-- [https://katacoda.com/courses/kubernetes](https://katacoda.com/courses/kubernetes)
-- Guides and interactive tutorial within the Kubernetes docs [https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/)
-- Kubernetes by example [https://kubernetesbyexample.com/](https://kubernetesbyexample.com/) created by OpenShift

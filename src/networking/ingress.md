@@ -55,8 +55,6 @@ You can check whether it is running through — if the pods are running for ngin
 kubectl get pods --all-namespaces | grep nginx-ingress
 ```
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/721d4c68-dad4-4597-b826-84b7e15d12b4/Screenshot_from_2021-01-13_14-20-53.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/721d4c68-dad4-4597-b826-84b7e15d12b4/Screenshot_from_2021-01-13_14-20-53.png)
-
 If you receive an empty output, you might have to wait a little bit longer for Ingress to start.
 
 Here is the YAML definition of our Ingress resource
