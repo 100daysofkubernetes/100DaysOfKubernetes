@@ -5,11 +5,9 @@
 * Add your blog posts, videos etc. related to the topic here!
 
 # Learning Resources
-
-TODO
+- Their [webiste](https://kustomize.io/) has lots of amazing videos
 
 # Example Notes
-
 
 Configuration Management for Kubernetes
 

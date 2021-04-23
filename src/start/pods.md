@@ -1,11 +1,10 @@
 # Kubernetes Pods 
 
 # 100Days Resources
-* [Video by Anais Urlichs](https://youtu.be/fCpv7xSEyEI)
-* Add your blog posts, videos etc. related to the topic here!
+- [Video by Anais Urlichs](https://youtu.be/fCpv7xSEyEI)
+- Add your blog posts, videos etc. related to the topic here!
 
 # Learning Resources
-
 - [https://www.vmware.com/topics/glossary/content/kubernetes-pods](https://www.vmware.com/topics/glossary/content/kubernetes-pods)
 - [https://cloud.google.com/kubernetes-engine/docs/concepts/pod](https://cloud.google.com/kubernetes-engine/docs/concepts/pod)
 - [https://kubernetes.io/docs/concepts/workloads/pods/](https://kubernetes.io/docs/concepts/workloads/pods/)

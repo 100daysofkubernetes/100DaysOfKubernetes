@@ -5,7 +5,7 @@
 * Add your blog posts, videos etc. related to the topic here!
 
 # Learning Resources
-TODO
+- [TechWorld with Nana explanation on Namespaces](https://youtu.be/K3jNo4z5Jx8)
 
 # Example Notes
 

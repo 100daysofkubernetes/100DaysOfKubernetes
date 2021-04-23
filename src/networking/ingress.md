@@ -1,12 +1,11 @@
 # Ingress
 
 # 100Days Resources
-* [Video by Anais Urlichs](https://youtu.be/rNvFvGVzT5o)
-* Add your blog posts, videos etc. related to the topic here!
+- [Video by Anais Urlichs](https://youtu.be/rNvFvGVzT5o)
+- Add your blog posts, videos etc. related to the topic here!
 
 # Learning Resources
- 
-TODO
+- [Ingress Tutorial by Anais Urlichs](https://github.com/AnaisUrlichs/ingress-example)
 
 # Example Notes
 

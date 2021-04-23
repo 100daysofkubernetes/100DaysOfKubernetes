@@ -41,6 +41,7 @@
 - [k9s](./tools/k9s.md)
 - [Knative](./tools/knative.md)
 - [GitOps and Argo](./tools/argo.md)
+- [Linkerd](./tools/linkerd.md)
 
 # Observability
 - [Prometheus](./observaility/prometheus.md)

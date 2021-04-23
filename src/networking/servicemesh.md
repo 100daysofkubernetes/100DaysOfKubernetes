@@ -1,11 +1,12 @@
 # Service Mesh
 
 # 100Days Resources
-* [Video by Anais Urlichs](https://youtu.be/4LU-XaQ7zzA)
-* Add your blog posts, videos etc. related to the topic here!
+- [Video by Anais Urlichs](https://youtu.be/4LU-XaQ7zzA)
+- Add your blog posts, videos etc. related to the topic here!
 
 # Learning Resources
-TODO
+- [Microsoft Introduction to Service Mesh](https://docs.microsoft.com/en-us/azure/aks/servicemesh-about)
+- [Nginx explanation on Service Mesh](https://www.nginx.com/blog/what-is-a-service-mesh/)
 
 # Example Notes
 

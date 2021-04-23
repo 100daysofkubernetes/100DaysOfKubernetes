@@ -5,8 +5,8 @@
 * Add your blog posts, videos etc. related to the topic here!
 
 # Learning Resources
-
-TODO
+- [The GitHub repository](https://github.com/derailed/k9s)
+- [Overview Medium Post](https://medium.com/flant-com/k9s-terminal-ui-for-kubernetes-aeead8b0303f)
 
 # Example Notes
 
@@ -166,5 +166,3 @@ You can find example skin files in the skins directory: [https://github.com/dera
 View all the color definitions here: [https://k9scli.io/topics/skins/](https://k9scli.io/topics/skins/)
 
 For further information on how to [optimise K9s](https://k9scli.io/topics/video/), check-out their video tutorials.
-
-Extensive written tutorial: [https://medium.com/flant-com/k9s-terminal-ui-for-kubernetes-aeead8b0303f](https://medium.com/flant-com/k9s-terminal-ui-for-kubernetes-aeead8b0303f)
