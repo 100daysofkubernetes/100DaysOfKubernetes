@@ -1,11 +1,10 @@
 # Kubernetes Architecture
 
 # 100Days Resources
-* [Video by Anais Urlichs](https://youtu.be/oqWgMc9yYcc)
-* Add your blog posts, videos etc. related to the topic here!
+- [Video by Anais Urlichs](https://youtu.be/oqWgMc9yYcc)
+- Add your blog posts, videos etc. related to the topic here!
 
 # Learning Resources
-
 - [How Kubernetes deployments work](https://youtu.be/mNK14yXIZF4)
 
 # Example Notes

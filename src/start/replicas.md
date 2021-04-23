@@ -1,11 +1,10 @@
 # Kubernetes ReplicaSet
 
 # 100Days Resources
-* [Video by Anais Urlichs](https://youtu.be/TBkZaPDX7Us)
-* Add your blog posts, videos etc. related to the topic here!
+- [Video by Anais Urlichs](https://youtu.be/TBkZaPDX7Us)
+- Add your blog posts, videos etc. related to the topic here!
 
 # Learning Resources
-
 - [Kubernetes ReplicaSet official documentation](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)
 
 # Example Notes

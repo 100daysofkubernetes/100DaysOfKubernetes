@@ -1,8 +1,8 @@
 # Kubernetes Service
 
 # 100Days Resources
-* Video by Anais Urlichs [One](https://youtu.be/4_felE4hMog) and [Two](https://youtu.be/vxA4IP3K7Z4)
-* Add your blog posts, videos etc. related to the topic here!
+- Video by Anais Urlichs [One](https://youtu.be/4_felE4hMog) and [Two](https://youtu.be/vxA4IP3K7Z4)
+- Add your blog posts, videos etc. related to the topic here!
 
 # Learning Resources
 - [Official Documentation](https://kubernetes.io/docs/concepts/services-networking/service/)

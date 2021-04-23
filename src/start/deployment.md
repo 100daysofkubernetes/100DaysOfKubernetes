@@ -1,11 +1,10 @@
-# Running Pods 
+# Kubernetes Deployments 
 
 # 100Days Resources
 * [Video by Anais Urlichs](https://youtu.be/qt76R2G4h-0)
 * Add your blog posts, videos etc. related to the topic here!
 
 # Learning Resources
-
 - [Kubernetes Deployments official documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
 
 # Example Notes

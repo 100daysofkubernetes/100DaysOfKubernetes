@@ -1,22 +1,24 @@
 # GitOps and Argo
 
 # 100Days Resources
-* [Video by Anais Urlichs](https://youtu.be/c4v7wGqKcEY)
+* [Video by Anais Urlichs on ArgoCD](https://youtu.be/c4v7wGqKcEY)
+* [Video by Anais Urlichs on Argo Workflows](https://youtu.be/c3qJr6L8nHg)
 * Add your blog posts, videos etc. related to the topic here!
 
 # Learning Resources
-TODO
+- ["Understanding GitOps: The Latest Tools and Philosophies"](https://thenewstack.io/understanding-gitops-the-latest-tools-and-philosophies/)
+- [The DevOps Toolkit](https://www.youtube.com/c/DevOpsToolkit/videos) has several great explanations and tutorials around GitOps and ArgoCD
 
 # Example Notes
 
-This is the current website of Argo [https://argoproj.github.io/](https://argoproj.github.io/)
+This is the website of Argo [https://argoproj.github.io/](https://argoproj.github.io/)
 
 Argo is currently a CNCF incubating project. Part of the Argo project family are three different projects:
 
-1. Workflows and Pipelines
-2. Continuous Delivery
-3. Rollouts
-4. Events
+1. [Continuous Delivery](./argo.html#argo-cd)
+2. [Workflows and Pipelines](./argo.html#argo-workflows)
+3. [Events](./argo.html#argo-events)
+4. Rollouts
 
 **So why would you want to learn about Argo and all of its projects?**
 
@@ -212,6 +214,13 @@ The sensor listens to the event bus for certain events and conditional triggers 
 
 What will ultimately happen - the action e.g. our Argo workflow
 
+
+The eventbus acts as the transport layer of Argo-Events by connecting the event-sources and sensors.
+
+Event-Sources publish the events while the sensors subscribe to the events to execute triggers.
+
+The current implementation of the eventbus is powered by NATS streaming.
+
 ## Argo Workflows
 
 Documentation [https://argoproj.github.io/argo-workflows/](https://argoproj.github.io/argo-workflows/)
@@ -308,10 +317,3 @@ kubectl -n argo-events get workflows | grep "webhook"
 kubectl -n argo-events get wf
 ```
 
-**Further information from the docs**
-
-The eventbus acts as the transport layer of Argo-Events by connecting the event-sources and sensors.
-
-Event-Sources publish the events while the sensors subscribe to the events to execute triggers.
-
-The current implementation of the eventbus is powered by NATS streaming.

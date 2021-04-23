@@ -1,12 +1,12 @@
 # Running Pods 
 
 # 100Days Resources
-* [Video by Anais Urlichs](https://youtu.be/S39JmiFsheM)
-* Add your blog posts, videos etc. related to the topic here!
+- [Video by Anais Urlichs](https://youtu.be/S39JmiFsheM)
+- Add your blog posts, videos etc. related to the topic here!
 
 # Learning Resources
-
-TODO
+- [How Pods and the Pod Lifecycle work in Kubernetes](https://youtu.be/wlYESb124xM)
+- [Pods and Containers - Kubernetes Networking | Container Communication inside the Pod](https://youtu.be/5cNrTU6o3Fw)
 
 # Example Notes
 

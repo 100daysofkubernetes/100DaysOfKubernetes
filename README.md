@@ -17,7 +17,7 @@ This book is made with mdBook. Instructions on how to use mdBook can be found [h
 ## Contribute
 
 Prerequisites
-- have Rust installed 
+- [have Rust installed](https://www.rust-lang.org/tools/install) 
 - install [mdBook](https://github.com/rust-lang/mdBook)
 
 Run 
@@ -57,3 +57,8 @@ A list of related learning resources. Different to '100Days Resources', these do
 
 This section provides an introduction to the topics. The goal is to advance each topics over time. 
 When you are first time learning about a topic, it is usually best to take your own notes but sometimes having a starting point and examples is helpful.
+
+## Core Maintainers
+
+- [Anais Urlichs](https://github.com/AnaisUrlichs)
+- [Rishab Kumar](https://github.com/rishabkumar7)
