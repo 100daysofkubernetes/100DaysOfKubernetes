@@ -1,0 +1,346 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Linkerd - 100 Days Of Kubernetes</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Overview</li><li class="chapter-item expanded "><a href="../overview.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../contributors.html"><strong aria-hidden="true">2.</strong> Contributors</a></li><li class="chapter-item expanded affix "><li class="part-title">Let's get started</li><li class="chapter-item expanded "><a href="../start/intro-to-k8s.html"><strong aria-hidden="true">3.</strong> Introduction to Kubernetes</a></li><li class="chapter-item expanded "><a href="../start/architecture-overview.html"><strong aria-hidden="true">4.</strong> Kubernetes Architecture</a></li><li class="chapter-item expanded "><a href="../start/pods.html"><strong aria-hidden="true">5.</strong> Kubernetes Pods</a></li><li class="chapter-item expanded "><a href="../start/set-up-cluster.html"><strong aria-hidden="true">6.</strong> Setup Kubernetes Cluster</a></li><li class="chapter-item expanded "><a href="../start/run-pod.html"><strong aria-hidden="true">7.</strong> Run Pods</a></li><li class="chapter-item expanded "><a href="../start/replicas.html"><strong aria-hidden="true">8.</strong> Replica Set</a></li><li class="chapter-item expanded "><a href="../start/deployment.html"><strong aria-hidden="true">9.</strong> Kubernetes Deployment</a></li><li class="chapter-item expanded "><a href="../start/namespaces.html"><strong aria-hidden="true">10.</strong> Namespaces</a></li><li class="chapter-item expanded "><a href="../start/configmaps.html"><strong aria-hidden="true">11.</strong> ConfigMaps</a></li><li class="chapter-item expanded affix "><li class="part-title">Networking</li><li class="chapter-item expanded "><a href="../networking/service.html"><strong aria-hidden="true">12.</strong> Kubernetes Service</a></li><li class="chapter-item expanded "><a href="../networking/ingress.html"><strong aria-hidden="true">13.</strong> Kubernetes Ingress</a></li><li class="chapter-item expanded "><a href="../networking/servicemesh.html"><strong aria-hidden="true">14.</strong> Service Mesh</a></li><li class="chapter-item expanded affix "><li class="part-title">Storage</li><li class="chapter-item expanded "><a href="../storage/volumes.html"><strong aria-hidden="true">15.</strong> Kubernetes Volumes</a></li><li class="chapter-item expanded affix "><li class="part-title">Kubernetes Clusters Overview and Use</li><li class="chapter-item expanded "><a href="../kubernetes-clusters/kind.html"><strong aria-hidden="true">16.</strong> KinD Cluster</a></li><li class="chapter-item expanded "><a href="../kubernetes-clusters/k3s.html"><strong aria-hidden="true">17.</strong> K3s and K3sup</a></li><li class="chapter-item expanded affix "><li class="part-title">Templating & IaC</li><li class="chapter-item expanded "><a href="../templating/kustomize.html"><strong aria-hidden="true">18.</strong> Kustomize</a></li><li class="chapter-item expanded "><a href="../templating/terraform.html"><strong aria-hidden="true">19.</strong> Terraform</a></li><li class="chapter-item expanded "><a href="../templating/crossplane.html"><strong aria-hidden="true">20.</strong> Crossplane</a></li><li class="chapter-item expanded affix "><li class="part-title">Helm</li><li class="chapter-item expanded "><a href="../helm/partone.html"><strong aria-hidden="true">21.</strong> Helm Part 1</a></li><li class="chapter-item expanded "><a href="../helm/partwo.html"><strong aria-hidden="true">22.</strong> Helm Part 2</a></li><li class="chapter-item expanded "><a href="../helm/partthree.html"><strong aria-hidden="true">23.</strong> Helm Part 3</a></li><li class="chapter-item expanded affix "><li class="part-title">Cloud Native Tools and Platforms</li><li class="chapter-item expanded "><a href="../tools/k9s.html"><strong aria-hidden="true">24.</strong> k9s</a></li><li class="chapter-item expanded "><a href="../tools/knative.html"><strong aria-hidden="true">25.</strong> Knative</a></li><li class="chapter-item expanded "><a href="../tools/argo.html"><strong aria-hidden="true">26.</strong> GitOps and Argo</a></li><li class="chapter-item expanded "><a href="../tools/linkerd.html" class="active"><strong aria-hidden="true">27.</strong> Linkerd</a></li><li class="chapter-item expanded affix "><li class="part-title">Observability</li><li class="chapter-item expanded "><a href="../observaility/prometheus.html"><strong aria-hidden="true">28.</strong> Prometheus</a></li><li class="chapter-item expanded "><a href="../observability/prometheus-exporter.html"><strong aria-hidden="true">29.</strong> Prometheus Exporter</a></li><li class="chapter-item expanded affix "><li class="part-title">Advanced Topics</li><li class="chapter-item expanded "><a href="../advanced/operators.html"><strong aria-hidden="true">30.</strong> Kubernetes Operators</a></li><li class="chapter-item expanded affix "><li class="part-title">Tutorials and Practice</li><li class="chapter-item expanded "><a href="../tutorials/serverless.html"><strong aria-hidden="true">31.</strong> Serverless</a></li><li class="chapter-item expanded "><a href="../tutorials/ingress-from-scratch.html"><strong aria-hidden="true">32.</strong> Ingress from scratch</a></li><li class="chapter-item expanded "><a href="../tutorials/istio-from-scratch.html"><strong aria-hidden="true">33.</strong> Istio from scratch</a></li><li class="chapter-item expanded affix "><li class="part-title">Troubleshooting K8s</li><li class="chapter-item expanded "><a href="../troubleshooting/crashloopbackoff.html"><strong aria-hidden="true">34.</strong> CrashLoopBackOff</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">100 Days Of Kubernetes</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        <a href="https://github.com/100daysofkubernetes/100DaysOfKubernetes" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="linkerd"><a class="header" href="#linkerd">Linkerd</a></h1>
+<h1 id="100days-resources"><a class="header" href="#100days-resources">100Days Resources</a></h1>
+<ul>
+<li><a href="https://youtu.be/4Y6TR-sg0mQ">Video by Anais Urlichs</a></li>
+<li>Add your blog posts, videos etc. related to the topic here!</li>
+</ul>
+<h1 id="learning-resources"><a class="header" href="#learning-resources">Learning Resources</a></h1>
+<ul>
+<li><a href="https://linkerd.io/2.10/getting-started/">The Linkerd getting started guide</a></li>
+<li><a href="https://youtu.be/QGZO2V_N3ts">Video by Saiyam Pathak</a></li>
+<li><a href="../networking/servicemesh.html">Have a look at the intro to Service Mesh</a></li>
+</ul>
+<h1 id="example-notes"><a class="header" href="#example-notes">Example Notes</a></h1>
+<p>If you want to get started with Linkerd, for the most part, just follow their Documentation. :)</p>
+<p>In some of the previous videos, we looked as Service Mesh, and specifically at Istio. Since many people struggle to set-up Istio I thought it would be great to take another look at a different Service Mesh. In this case, at Linkerd. </p>
+<p>Note that Istio is still one of the most popular. Thus, it is always good to still know about that but as an alternative, let's also take a look at Linkerd.</p>
+<p><strong>Benefits of Linkerd</strong></p>
+<blockquote>
+<p>It works as it is — Saiyam</p>
+</blockquote>
+<ul>
+<li>First service mesh project that introduced the term</li>
+<li>In production for about 4 years</li>
+<li>Open governance model and hosted by the CNCF</li>
+<li>Super extensible and easy to install add-ons</li>
+<li>Easy to install</li>
+<li>It is a community project</li>
+<li>Kept small, you should spend the least amount of resources</li>
+</ul>
+<p><strong>More information</strong></p>
+<p>Control plane written in Go and data plane written in Rust.</p>
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<p>LinkerD has a really neat <a href="https://linkerd.io/2.10/getting-started/">getting-started documentation</a> that you can follow step-by-step.</p>
+<p>First, we are going to follow the onboarding documentation. Once we have everything set-up and working, we want to see metrics of our application through Prometheus and Grafana. </p>
+<p>Usually I would copy paste commands to make sure everyone knows the order but since their documentation is pretty straight-forward, I am not going to do that this time.</p>
+<ol>
+<li>Let's follow the steps detailed in the getting-started documentation <a href="https://linkerd.io/2.10/getting-started/">https://linkerd.io/2.10/getting-started/</a></li>
+</ol>
+<p>In our case, we are going to try it out on our Docker for Desktop Kubernetes cluster but you could also use another cluster such as KinD.</p>
+<p>Small side-note, I absolutely love that they have a checker command to see whether LinkerD can actually be installed on your cluster</p>
+<pre><code class="language-jsx">linkerd check --pre
+</code></pre>
+<p>How amazing is that?</p>
+<p>And then, they have a separate command to see whether all the resources are ready</p>
+<pre><code class="language-jsx">linkerd check
+</code></pre>
+<p>I am already in love with them!</p>
+<p>We are going to keep following the guide, because we want to have a fancy dashboard with metrics in the end</p>
+<pre><code class="language-jsx">linkerd viz install | kubectl apply -f -
+</code></pre>
+<pre><code class="language-jsx">linkerd jaeger install | kubectl apply -f -
+</code></pre>
+<p>Then we are going to check that everything is ready</p>
+<pre><code class="language-jsx">linkerd check
+</code></pre>
+<p>Access the dashboard</p>
+<pre><code class="language-jsx">**linkerd viz dashboard &amp;**
+</code></pre>
+<p>this will give you the <a href="http://localhost">localhost</a> port to a beautiful Dashboard</p>
+<p>We are going to use the following GitHub respository to install our application</p>
+<p><a href="https://github.com/AnaisUrlichs/react-article-display">https://github.com/AnaisUrlichs/react-article-display</a></p>
+<p>After clone, cd into react-article-display</p>
+<p>Now you want to have Helm istalled since this application relies on a Helm Chart</p>
+<pre><code class="language-jsx">helm install react-article ./charts/example-chart
+</code></pre>
+<p>Once installed, we can port-forward to access our application</p>
+<pre><code class="language-jsx">kubectl por-forward service/react-article-example-chart 5000:80
+</code></pre>
+<p>Now we just have to connect our Service Mesh with the application</p>
+<pre><code class="language-jsx">kubectl get deploy -o yaml \
+  | linkerd inject - \
+  | kubectl apply -f -
+</code></pre>
+<p>Then we can go ahead and run checks again</p>
+<pre><code class="language-jsx">linkerd check --proxy
+</code></pre>
+<p>We can see the live stats of our application through</p>
+<pre><code class="language-jsx">linkerd viz stat deploy
+</code></pre>
+<p>And see the stream of requests to our services throug</p>
+<pre><code class="language-jsx">linkerd viz tap deploy/web
+</code></pre>
+<p>Now let's go ahead and see how we can do traffic splitting for Canary deployments with Linkerd. For this, we are going to follow the documentation <a href="https://linkerd.io/2.10/tasks/canary-release/">https://linkerd.io/2.10/tasks/canary-release/</a></p>
+<p>Clone the following repository</p>
+<p>Apply the first application</p>
+<pre><code class="language-jsx">kubectl apply -f app-one.yaml
+</code></pre>
+<p>You can access it through kubectl port forwarding</p>
+<pre><code class="language-jsx">kubectl port-forward service/app-one 3000:80
+</code></pre>
+<p>Install Flagger</p>
+<pre><code class="language-jsx">kubectl apply -k github.com/fluxcd/flagger/kustomize/linkerd
+</code></pre>
+<p>Deploy the deployment resource</p>
+<pre><code class="language-jsx">kubectl create ns test &amp;&amp; \
+  kubectl apply -f https://run.linkerd.io/flagger.yml
+</code></pre>
+<p>Ensure they are ready</p>
+<pre><code class="language-jsx">kubectl -n test rollout status deploy podinfo
+</code></pre>
+<p>Access the service</p>
+<pre><code class="language-jsx">kubectl -n test port-forward svc/podinfo 9898
+</code></pre>
+<pre><code class="language-jsx">kubectl -n test get ev --watch
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../tools/argo.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../observaility/prometheus.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../tools/argo.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../observaility/prometheus.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
