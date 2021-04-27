@@ -174,7 +174,7 @@
 <h1 id="100days-resources"><a class="header" href="#100days-resources">100Days Resources</a></h1>
 <ul>
 <li><a href="https://youtu.be/uU-8Zcst5Qk">Video by Anais Urlichs</a></li>
-<li>Add your blog posts, videos etc. related to the topic here!</li>
+<li>[Kubernetes cluster in your local machine using Docker Desktop]https://medium.com/backbase/kubernetes-in-local-the-easy-way-f8ef2b98be68?sk=1cf6c2f31d82d836a2a75503b2fb17be</li>
 </ul>
 <h1 id="learning-resources"><a class="header" href="#learning-resources">Learning Resources</a></h1>
 <ul>
@@ -183,11 +183,11 @@
 </ul>
 <h1 id="example-notes"><a class="header" href="#example-notes">Example Notes</a></h1>
 <p>Today, I will get started with the <a href="http://leanpub.com/the-devops-2-3-toolkit">book</a>: The DevOps 2.3 Toolkit; and will work my way through the book.</p>
-<p><strong>Chapter 1</strong> provides an introduction to Kubernetes; I will use it to optimise the notes from he previous day.</p>
-<p><strong>Chapter 2</strong> provides a walkthrough on how to set-up a local Kubernetes cluster using minikube or microk8s. Alternatively, <a href="https://kind.sigs.k8s.io/docs/user/quick-start/">kind</a> could also be used to create a local Kubernetes cluster.</p>
+<p><strong>Chapter 1</strong> provides an introduction to Kubernetes; I will use it to optimise the notes from the previous day.</p>
+<p><strong>Chapter 2</strong> provides a walkthrough on how to set-up a local Kubernetes cluster using minikube or microk8s. Alternatively, <a href="https://kind.sigs.k8s.io/docs/user/quick-start/">kind</a> could also be used to create a local Kubernetes cluster or if you have Docker Desktop you could use directly the single node cluster included: https://medium.com/backbase/kubernetes-in-local-the-easy-way-f8ef2b98be68?sk=1cf6c2f31d82d836a2a75503b2fb17be</p>
 <p>Prerequisites</p>
 <ol>
-<li>Have Docker isntalled (if not go ahead and do it): <a href="https://docs.docker.com/">https://docs.docker.com/</a></li>
+<li>Have Docker installed (if not go ahead and do it): <a href="https://docs.docker.com/">https://docs.docker.com/</a></li>
 <li>Install kubectl </li>
 </ol>
 <p><strong>Here is how to install kubectl</strong></p>
@@ -210,7 +210,7 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 <p>To install minikube, you require a virtualisation technology such as VirtualBox. If you are on windows, you might want to use hyperv instead. Minikube provides a single node instance that you can use in combination with kubectl.</p>
 <p>It supports DNS, Dashboards, CNI, NodePorts, Config Maps, etc. It also supports multiple hypervisors, such as Virtualbox, kvm, etc.</p>
 <p>In my case I am going to be using <a href="https://microk8s.io/">microk8s</a> since I had several issues getting started with minikube. However, please don't let this put you off. Please look for yourself into each tool and decide which one you like the best.</p>
-<p>Mikrok8s provides a lightweight Kubernetes installation on your local machine. Overall, it is much easier to install on Linux using snap since it does not require any virtualization tools. </p>
+<p>Microk8s provides a lightweight Kubernetes installation on your local machine. Overall, it is much easier to install on Linux using snap since it does not require any virtualization tools. </p>
 <pre><code class="language-jsx">sudo snap install microk8s --classic
 </code></pre>
 <p>However, also the Windows and Mac installation are quite straightforward so have a look at those on their website.</p>
