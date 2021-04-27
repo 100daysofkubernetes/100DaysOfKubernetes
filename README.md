@@ -38,7 +38,7 @@ Now you should be able to open the book on http://localhost:3000/
 
 The book is divided into several higher-level topics. Each topic has several sub-topics that are individual pages or chapters.
 
-Thos chapters have a similar structure:
+Those chapters have a similar structure:
 
 **Title**
 
