@@ -1,6 +1,6 @@
 # About the contributors
 
-If you have contributed to this book, please add youself to the list :)
+If you have contributed to this book, please add yourself to the list :)
 
 #### Anais Urlichs
 - [GitHub](https://github.com/AnaisUrlichs)
