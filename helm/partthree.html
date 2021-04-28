@@ -177,12 +177,18 @@
 <li>Add your blog posts, videos etc. related to the topic here!</li>
 </ul>
 <h1 id="learning-resources"><a class="header" href="#learning-resources">Learning Resources</a></h1>
-<p>TODO</p>
+<ul>
+<li>https://helm.sh/docs/chart_template_guide/getting_started/</li>
+</ul>
 <h1 id="example-notes"><a class="header" href="#example-notes">Example Notes</a></h1>
 <p>Charts are the packages that Helm works with — these are then turned into Kubernetes manifests and installed on your cluster.</p>
 <p>You can easily go ahead and create a chart template</p>
 <pre><code class="language-jsx">helm create &lt;name of your choice&gt;
 </code></pre>
+<blockquote>
+<p>Chart names must be lower case letters and numbers. Words may be separated with dashes (-) <br />
+YAML files should be indented using two spaces (and never tabs).</p>
+</blockquote>
 <p>This chart is based on the nginx image.</p>
 <p>This chart template is especially useful if you are developing a stateless chart — we will cover other starting points later on.</p>
 <p>With the following command, you can go ahead and install the chart</p>
@@ -192,46 +198,144 @@
 <p>Note that your Kubernetes cluster needs to have access to the Docker Hub to pull the image from there and use it.</p>
 <p>This chart runs Nginx out of the box — the templates within the charts are used to set-up the Kubernetes manifests.</p>
 <ul>
-<li>The syntax is providing an &quot;if/then&quot; logic — which makes it possible to have default values if no custom values are provided within the Values file.</li>
-<li>With the include function, objects from one template can be used within another template; the first argument is the name of the template, the &quot;.&quot; that is passed in refers to the second argument in the root object.</li>
-<li>The &quot;toYaml&quot; function turns data into YAML syntax</li>
-<li>Go templates have if else statements, here is an example</li>
+<li>Helm Template Syntax and creating Templates</li>
 </ul>
+<blockquote>
+<p>Helm uses the Go text template engine provided as part of the Go standard library. The syntax is used in kubectl (the command-line application for Kubernetes) templates, Hugo (the static site generator), and numerous other applications built in Go.</p>
+</blockquote>
+<p>Note that you do not have to know Go to create templates.</p>
+<p>To pass custom information from the Chart file to the template file, you have to use annotation.</p>
+<ul>
+<li>
+<p>You can control the flow of the template generation using:</p>
+<ul>
+<li>
+<p><code>if/else</code> for creating conditional blocks.</p>
 <pre><code class="language-jsx">{{- if .Values.ingress.enabled -}}
 ...
 {{- else -}}
 # Ingress not enabled
 {{- end }}
 </code></pre>
+<p>The syntax is providing an <strong>&quot;if/then&quot;</strong> logic — which makes it possible to have default values if no custom values are provided within the values.yaml file.</p>
+</li>
+<li>
+<p><code>with</code> to set a scope to a particular object</p>
+<pre><code class="language-jsx">containers:
+  - name: {{ .Release.name }}
+    {{- with .Values.image }}
+    image:
+      repository: .repo
+      pullPolicy: .pullPolicy
+      tag: .tag
+    {{- end }}
+</code></pre>
+<p>while the values.yaml file contains</p>
+<pre><code class="language-yaml">image:
+  repo: my-repo
+  pullPolicy: always
+  tag: 1.2.3
+</code></pre>
+<p>In this example the scope is changed from the current scope which is <code>.</code> to another object which is <code>.Values.image</code>.
+Hence, <code>my-repo</code>, <code>always</code> and <code>1.2.3</code> were referenced without specifying <code>.Values.images.</code>.</p>
+<blockquote>
+<p>WARNING: Other objects can not be accessed using <code>.</code> from within a restricted scope. A solution to this scenario will be
+using variables <code>$</code>.</p>
+</blockquote>
+</li>
+<li>
+<p><code>range</code>, which provides a &quot;for each&quot;-style loop</p>
+<pre><code class="language-jsx">cars: |-
+  {{- range .Values.cars }}
+  - {{ . }}
+  {{- end }}
+</code></pre>
+<p>with the values.yaml file contains</p>
+<pre><code class="language-yaml">cars:
+  - BMW
+  - Ford
+  - Hyundai
+</code></pre>
+<p>Note that <code>range</code> too changes the scope. But to what?
+In each loop the scope becomes a member of the list. In this case, <code>.Values.cars</code> is a list of strings, so each iteration the
+scope becomes a string. In the first iteration <code>.</code> is set to <code>BMW</code>. The second iteration, it is set to <code>Ford</code> and in the third
+it is set to <code>Hyundai</code>. Therefore, each item is referenced using <code>.</code></p>
+<pre><code class="language-jsx">containers:
+  - name: {{ .Release.name }}
+    env:
+      {{- range .Values.env }}
+      - name: {{ .name }}
+        value: {{ .value | quote }}
+      {{- end  }}
+</code></pre>
+<p>while the values.yaml file contains</p>
+<pre><code class="language-yaml">env:
+  - name: envVar1
+    value: true
+  - name: envVar2
+    value: 5
+  - name: envVar3
+    value: helmForever
+</code></pre>
+<p>In this case, <code>.Values.env</code> is a list of dictonary, so each iteration the scope becomes a dictionary.
+For example, in the first iteration, the <code>.</code> is the first dictionary <code>{name: envVar1, value: true}</code>.
+In the second iteration the scope is the dictionary <code>{name: envVar2, value: 5}</code> and so on.
+In addition, you can perform a pipeline on the value of <code>.name</code> or <code>.value</code> as shown.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Special Functions</p>
+<ul>
+<li>With the <strong>include</strong> function, objects from one template can be used within another template; the first argument is the name of the template, the &quot;.&quot; that is passed in refers to the second argument in the root object.</li>
+</ul>
+<pre><code class="language-yaml">metadata:
+  name: {{ include &quot;helm-example.fullname&quot; . }}
+</code></pre>
+<ul>
+<li>With the <strong>required</strong> function, you can set a parameter as required. In case it's not passed a custom error message will be prompted.</li>
+</ul>
+<pre><code class="language-yaml">image:
+    repository: {{ required &quot;An image repository is required&quot; .Values.image.repository }}
+</code></pre>
+</li>
+<li>
+<p>You can also add your own variables to tempaltes</p>
+</li>
+</ul>
+<pre><code class="language-jsx">{{ $var := .Values.character }}
+</code></pre>
+<ul>
+<li>The &quot;toYaml&quot; function turns data into YAML syntax</li>
+</ul>
 <blockquote>
 <p>Helm has the ability to build a chart archive. Each chart archive is a gzipped TAR file with the extension .tgz. Any tool that can create, extract, and otherwise work on gzipped TAR files will work with Helm’s chart archives. Source. Learning Helm Book</p>
 </blockquote>
 <ul>
-<li>You can also add your own variables to tempaltes</li>
+<li>Pipelines</li>
 </ul>
-<pre><code class="language-jsx">{{ $var := .Values.character }}
-</code></pre>
-<p>You can package your Helm chart with the following command</p>
-<pre><code class="language-jsx">helm package &lt;chart name&gt;
-</code></pre>
-<p>Helm Template Syntax and creating Templates</p>
-<blockquote>
-<p>Helm uses the Go text template engine provided as part of the Go standard library. The syntax is used in kubectl (the command-line application for Kubernetes) templates, Hugo (the static site generator), and numerous other applications built in Go.</p>
-</blockquote>
-<p>Note that you do not have to know Go to create templates.</p>
-<p>To pass custom information from the Chart file to the template file, you have to use annotation.</p>
-<p>Pipelines</p>
-<p>In Helm, a pipeline in a chain of variables, commands and functions. </p>
+<p>In Helm, a pipeline is a chain of variables, commands and functions which is used to alter a value before placing it in the values.yaml file.</p>
 <blockquote>
 <p>The value of a variable or the output of a function is used as the input to the next function in a pipeline. The output of the final element of a pipeline is the output of the pipeline. The following illustrates a simple pipeline:
-character: {{ .Values.character | default &quot;Sylvester&quot; | quote }}</p>
+character: <code>{{ .Values.character | default &quot;Sylvester&quot; | quote }}</code></p>
 </blockquote>
-<p>Writing maintainable templates, here are the suggestions by the maintainers</p>
+<ul>
+<li>Writing maintainable templates, here are the suggestions by the maintainers</li>
+</ul>
 <blockquote>
 <p>You may go long periods without making structural changes to the templates in a chart and then come back to it. Being able to quickly rediscover the layout will make the processes faster.</p>
 </blockquote>
 <p>Other people will look at the templates in charts. This may be team members who create the chart or those that consume it. Consumers can, and sometimes do, open up a chart to inspect it prior to installing it or as part of a process to fork it.</p>
 <p>When you debug a chart, which is covered in the next section, it is easier to do so with some structure in the templates.</p>
+<ul>
+<li>You can package your Helm chart with the following command.</li>
+</ul>
+<pre><code class="language-jsx">helm package &lt;chart name&gt;
+</code></pre>
+<p>It is important to think of a Helm chart as a package.
+This package can be published to a public or private repository.
+Helm repositories can also be hosted in GitHub, GitLab pages, object storage and using Chartmuseum.
+You can also find charts hosted in many distributed repositories hosted by numerous people and organizations through <em>Helm Hub</em> (aka <a href="https://artifacthub.io/">Artifact Hub</a>).</p>
 
                     </main>
 
