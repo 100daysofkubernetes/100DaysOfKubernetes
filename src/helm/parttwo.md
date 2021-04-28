@@ -93,7 +93,7 @@ We call also pass new values into our chart upon installing the chart
       ```jsx
       helm install mysite bitnami/drupal --set drupalUsername=admin
       ```
-  3. Using a custom YAML file that specifies the values for (some) parameters can be provided while installing the chart using `--file` or `-f` flag.
+  2. Using a custom YAML file that specifies the values for (some) parameters can be provided while installing the chart using `--file` or `-f` flag.
       For example,
       ```sh
       helm install mysite bitnami/drupal -f my-custom-value.yml
