@@ -80,7 +80,7 @@ helm template mysite bitnami/drupal --values values.yaml --set \drupalEmail=foo@
 
 However, this command separates the installation logic from the helm upgrade logic.The helm template command does not contact the Kubernetes server. Resulting, this command does not provide us with a complete validation of our Helm Chart. The helm template command is mainly used to access the YAML files and then use those within other tools.
 
-If you would like to reuse the same values within your Helm Chart, you could use the —reuse flag:
+If you would like to reuse the same values within your Helm Chart, you could use the --reuse flag:
 
 ```jsx
 helm upgrade mysite bitnami/drupal --reuse-values
@@ -88,11 +88,16 @@ helm upgrade mysite bitnami/drupal --reuse-values
 
 We call also pass new values into our chart upon installing the chart
 
-```jsx
-helm install mysite bitnami/drupal --set drupalUsername=admin
-```
-
-This is done with the —set command. However, you should avoid injecting custom values into the Helm Chart as much as possible since this will make it difficult to keep observability of your Helm resources.
+  1. Using `--set` or `-s` flag and override a certain variable. However, you should avoid injecting custom values into the Helm Chart as much as possible since this will make it difficult to keep observability of your Helm resources.
+      For example,
+      ```jsx
+      helm install mysite bitnami/drupal --set drupalUsername=admin
+      ```
+  2. Using a custom YAML file that specifies the values for (some) parameters can be provided while installing the chart using `--file` or `-f` flag.
+      For example,
+      ```sh
+      helm install mysite bitnami/drupal -f my-custom-value.yml
+      ```
 
 Whenever you install a new Helm chart, Helm creates a secret that tracks the previous version of the installation; you can view all the secrets with
 
