@@ -44,7 +44,7 @@
 - [Linkerd](./tools/linkerd.md)
 
 # Observability
-- [Prometheus](./observaility/prometheus.md)
+- [Prometheus](./observability/prometheus.md)
 - [Prometheus Exporter](./observability/prometheus-exporter.md)
 
 # Advanced Topics
