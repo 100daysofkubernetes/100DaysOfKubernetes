@@ -32,7 +32,7 @@
 - [Terraform](./templating/terraform.md)
 - [Crossplane](./templating/crossplane.md)
 
-# Helm 
+# Helm
 - [Helm Part 1](./helm/partone.md)
 - [Helm Part 2](./helm/partwo.md)
 - [Helm Part 3](./helm/partthree.md)
@@ -57,3 +57,6 @@
 
 # Troubleshooting K8s
 - [CrashLoopBackOff](./troubleshooting/crashloopbackoff.md)
+
+# Glossary
+- [Terminology Primer](./glossary/terminologyprimer.md)
