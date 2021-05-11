@@ -2,7 +2,7 @@
 
 # 100Days Resources
 * [Video by Anais Urlichs](https://youtu.be/uU-8Zcst5Qk)
-* [Kubernetes cluster in your local machine using Docker Desktop]https://medium.com/backbase/kubernetes-in-local-the-easy-way-f8ef2b98be68?sk=1cf6c2f31d82d836a2a75503b2fb17be
+* [Kubernetes cluster in your local machine using Docker Desktop](https://medium.com/backbase/kubernetes-in-local-the-easy-way-f8ef2b98be68?sk=1cf6c2f31d82d836a2a75503b2fb17be)
 
 # Learning Resources
 - What is Kubernetes: [https://youtu.be/VnvRFRk_51k](https://youtu.be/VnvRFRk_51k)
@@ -14,7 +14,7 @@ Today, I will get started with the [book](http://leanpub.com/the-devops-2-3-tool
 
 **Chapter 1** provides an introduction to Kubernetes; I will use it to optimise the notes from the previous day.
 
-**Chapter 2** provides a walkthrough on how to set-up a local Kubernetes cluster using minikube or microk8s. Alternatively, [kind](https://kind.sigs.k8s.io/docs/user/quick-start/) could also be used to create a local Kubernetes cluster or if you have Docker Desktop you could use directly the single node cluster included: https://medium.com/backbase/kubernetes-in-local-the-easy-way-f8ef2b98be68?sk=1cf6c2f31d82d836a2a75503b2fb17be
+**Chapter 2** provides a walkthrough on how to set-up a local Kubernetes cluster using minikube or microk8s. Alternatively, [kind](https://kind.sigs.k8s.io/docs/user/quick-start/) could also be used to create a local Kubernetes cluster or if you have Docker Desktop you could use directly the single node cluster [included](https://medium.com/backbase/kubernetes-in-local-the-easy-way-f8ef2b98be68?sk=1cf6c2f31d82d836a2a75503b2fb17be).
 
 Prerequisites
 
