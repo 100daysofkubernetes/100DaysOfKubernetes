@@ -54,7 +54,7 @@
 - [Serverless](./tutorials/serverless.md)
 - [Ingress from scratch](./tutorials/ingress-from-scratch.md)
 - [Istio from scratch](./tutorials/istio-from-scratch.md)
-- [Depoy to CIVO](./tutorials/deploy-to-civo.md)
+- [Deploy to CIVO](./tutorials/deploy-to-civo.md)
 
 # Troubleshooting K8s
 - [CrashLoopBackOff](./troubleshooting/crashloopbackoff.md)
