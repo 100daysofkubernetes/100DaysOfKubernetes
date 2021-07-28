@@ -381,7 +381,7 @@ authentication, authorization, and several admission controllers.</li>
 <li>The state of the cluster, networking, and other persistent information is kept in an etcd database</li>
 <li>etcd is a consistent and highly-available key value store used as Kubernetes' backing store for all cluster data</li>
 <li>Note that this database does not change; previous entries are not modified and new values are appended at the end.</li>
-<li>Once and entry can be deleted, it will be labelled for future removal by a compaction process. It works with curl and other HTTP libraries and provides reliable watch queries.</li>
+<li>Once an entry can be deleted, it will be labelled for future removal by a compaction process. It works with curl and other HTTP libraries and provides reliable watch queries.</li>
 <li>Requests to update the database are all sent through the kube api-server; each request has its own version number which allows the etcd to distinguish between requests. If two requests are sent simultaneously, the second request would then be flagged as invalid with a 409 error and the etcd will only update as per instructed by the first request.</li>
 <li>Note that it has to be specifically configured</li>
 </ul>
