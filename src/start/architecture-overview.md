@@ -31,7 +31,7 @@ API objects can be used to know
 
 - **kube-apiserver**
     - Provides the front-end to the cluster's shared state through which all components interact
-    - It is he kube-apiserver is central to the operation of the Kubernetes cluster.
+    - Is central to the operation of the Kubernetes cluster.
     - Handles internal and external traffic
     - The only agent that connects to the etcd database
     - Acts as the master process for the entire cluster
