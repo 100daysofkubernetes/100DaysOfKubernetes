@@ -49,7 +49,7 @@ API objects can be used to know
     - The state of the cluster, networking, and other persistent information is kept in an etcd database
     - etcd is a consistent and highly-available key value store used as Kubernetes' backing store for all cluster data
     - Note that this database does not change; previous entries are not modified and new values are appended at the end.
-    - Once and entry can be deleted, it will be labelled for future removal by a compaction process. It works with curl and other HTTP libraries and provides reliable watch queries.
+    - Once an entry can be deleted, it will be labelled for future removal by a compaction process. It works with curl and other HTTP libraries and provides reliable watch queries.
     - Requests to update the database are all sent through the kube api-server; each request has its own version number which allows the etcd to distinguish between requests. If two requests are sent simultaneously, the second request would then be flagged as invalid with a 409 error and the etcd will only update as per instructed by the first request.
     - Note that it has to be specifically configured
 - **Other Agents**
