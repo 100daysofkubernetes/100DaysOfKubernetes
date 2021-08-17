@@ -14,7 +14,7 @@ This section is intended as a quick primer to get you up to speed with the vario
 
 - **Control Plane:** The control plane is the container orchestration layer. It exposes an API that allows you to manage your cluster and its resources.
 
-- **Namespaces:** Namespaces are units of organization. They allow you to group related resources.
+- **Namespaces:** Namespaces are units of the organization. They allow you to group related resources.
 
 - **Nodes:** Nodes are worker machines in Kubernetes. Nodes can be virtual or physical. Kubernetes runs workloads by placing containers into Pods that run on Nodes. You will typically have multiple nodes in your Kubernetes cluster.
 
