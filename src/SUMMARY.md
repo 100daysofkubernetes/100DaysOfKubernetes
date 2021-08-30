@@ -43,6 +43,9 @@
 - [GitOps and Argo](./tools/argo.md)
 - [Linkerd](./tools/linkerd.md)
 
+# CI/CD & Deployments
+- [Deployment strategies](./deployments/deployment-strategies.md)
+
 # Observability
 - [Prometheus](./observaility/prometheus.md)
 - [Prometheus Exporter](./observability/prometheus-exporter.md)
@@ -55,6 +58,7 @@
 - [Ingress from scratch](./tutorials/ingress-from-scratch.md)
 - [Istio from scratch](./tutorials/istio-from-scratch.md)
 - [Deploy to CIVO](./tutorials/deploy-to-civo.md)
+- [Verify Deployments with Datree](./tutorials/datree.md)
 
 # Troubleshooting K8s
 - [CrashLoopBackOff](./troubleshooting/crashloopbackoff.md)

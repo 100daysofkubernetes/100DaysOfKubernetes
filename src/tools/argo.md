@@ -317,3 +317,235 @@ kubectl -n argo-events get workflows | grep "webhook"
 kubectl -n argo-events get wf
 ```
 
+## ArgoCD with Kustomize
+
+Let's use ArgoCD with Kustomize. 
+
+Since I have created my previous video on ArgoCD, I got several more questions on ArgoCD, specifically, how you can use Kustomize with ArgoCD or ArgoCD not working properly with Kustomize. So let's make ArgoCD play nice with Kustomize.
+
+If you are completely new to ArgoCD and/or Kustomize, I highly suggest you to watch the videos linked above. However, if you are completely new to GitOps, have a look at this blog post which provides a great overview: [https://thenewstack.io/understanding-gitops-the-latest-tools-and-philosophies/](https://thenewstack.io/understanding-gitops-the-latest-tools-and-philosophies/)
+
+This tutorial is going to walk you through:
+
+- Setting up ArgoCD
+- Setting up an example project with Kustomize
+- Deploying Kustomize YAML files with ArgoCD and allowing ArgoCD to manage the state of those
+
+Let's get started.
+
+## Setting up ArgoCD
+
+First, we are going to need a cluster on which we can run ArgoCD. In my case, I am going to use [Civo Cloud](http://civo.com). 
+
+With every new signup, you will receive $250 worth of credit to spend on Civo Cloud Resources. 
+
+You can find a guide on spinning up a Civo Cloud Kubernetes Cluster here: [https://www.civo.com/learn/creating-a-cluster-the-path-to-success](https://www.civo.com/learn/creating-a-cluster-the-path-to-success)
+
+Alternatively, you can use a KinD Cluster and Spin ArgoCD up there. 
+
+**Spinning up a KinD cluster can be done through the following commands:**
+
+```yaml
+brew upgrade
+brew install kind
+brew install kubectl
+
+kind create cluster --name argocd
+```
+
+If you do not have brew installed locally, you can have a look at their [documentation](https://kind.sigs.k8s.io/docs/user/quick-start/) for alternative options. 
+
+Once we have our Kubernetes cluster, whether that is a Civo Cloud cluster or another type of Kubernetes cluster, we can go ahead and install the argocd CLI as well as the ArgoCD CRDs. 
+
+Just a quick recap, ArgoCD is based on Custom Resource Definitions (CRDs for short) which are themselves built on top of Kubernetes and are Kubernetes resources types themselves. 
+
+**Installing the ArgoCD CLI**
+
+```yaml
+brew install argocd
+```
+
+Alternative installation options are listed here: [https://argoproj.github.io/argo-cd/cli_installation/](https://argoproj.github.io/argo-cd/cli_installation/)
+
+**Installing ArgoCD**
+
+```yaml
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+```
+
+Make sure that all of our resources are set up correctly
+
+```yaml
+kubectl get all -n argocd
+```
+
+Next, we can access the ArgoCD API Server through the following commands. First, we have to make the service into a type Loadbalancer 
+
+```yaml
+kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
+```
+
+Tbh if you are using this in production, you will probably want to use an Ingress resource instead.
+
+Then we can port-forward:
+
+```yaml
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+```
+
+Now the login credentials require you to have access to the ArgoCD secret with the password. You can look up the password through the following command:
+
+```yaml
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+```
+
+Note that depending on the ArgoCD version that you are using, this command might change. So if it does not work, please take a look at the documentation first before getting frustrated (yes, I have been there and the answer was in the documentation).
+
+Now once we have the password, we can log into ArgoCD:
+
+either through the UI with username=admin and our password from the secret or 
+
+through the CLI through running 
+
+```yaml
+argocd login localhost:8080
+```
+
+Note that you will only be able to run the command above if your are port-forwarding.
+
+Awesome! At this point, you should have access to the ArgoCD resources running within your cluster. Next, we can setup our Kustomize project. 
+
+## Kustomize
+
+Let's quickly recap what Kustomize is all about, why and how do we use it. 
+
+Kustomize allows you to configure your application configuration. Meaning, instead of having static YAML manifests that you have to manually update, you can have YAML files with the fields specified that should change per deployment. This will allow you to update those YAML files automatically through your CI/CD pipeline before deploying your updated resources.
+
+> Kustomize traverses a Kubernetes manifest to add, remove or update configuration options without forking — Source: [https://kustomize.io/](https://kustomize.io/)
+
+
+### Installation
+
+You can either go ahead and install the Kustomize CLI or install the kuberctl plugin.
+
+In our case, we are going to use the Kustomize CLI. You can find all installation options here: [https://kubectl.docs.kubernetes.io/installation/kustomize/](https://kubectl.docs.kubernetes.io/installation/kustomize/)
+
+```yaml
+brew install kustomize
+```
+
+Note that you can also use brew on WSL with brew for Linux: [https://docs.brew.sh/Homebrew-on-Linux](https://docs.brew.sh/Homebrew-on-Linux). This can make your life a lot easier in the long-term. 
+
+### Kustomize example
+
+We are going to use the following example resources to demonstrate the use and value of Kustomize: [https://github.com/AnaisUrlichs/react-article-display](https://github.com/AnaisUrlichs/react-article-display)
+
+Go ahead and clone the repository.
+
+```yaml
+git clone git@github.com:AnaisUrlichs/react-article-display.git
+```
+
+Next, checkout the branch called Kustomize
+
+```yaml
+cd react-article-display
+
+git checkout kustomize
+```
+
+Within the branch, you will find a directory called: manifests
+
+The manifests directory contains a kustomization.yaml file that will update the tag of our container image used in the deployment.yaml file. We are following this section of the Kustomize documentation for this: [https://kubectl.docs.kubernetes.io/references/kustomize/images/](https://kubectl.docs.kubernetes.io/references/kustomize/images/)
+
+Note that every directory that contains files that you want to modify needs a kustomization.yaml file. In this case, we just want to modify the deployment.yaml file in ONE directory.
+
+Our kustomization.yaml file:
+
+```jsx
+# kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+images:
+- name: anaisurlichs/react-example-app
+  newTag: 2.0.0
+
+resources:
+- deployment.yaml
+- service.yaml
+```
+
+Next, let's go ahead an create our new manifest with the tag change: 
+
+```yaml
+kustomize build ./manifests > ./kustomization/manifests.yaml
+```
+
+Once we run the command, we can see that the manifests/manifests.yaml contains our Service and our Deployment YAML but the deployment has a different tag to our original deployment.yaml within the manifests repository.
+
+Note that you can use the same resources from the directory and the same process on your own deployments and container image. You do not have to use this specific example with my tag.
+
+This demo is used merely to demonstrate the use of Kustomize and the process to deploying Kustomize resources through ArgoCD.
+
+Next, we want to go ahead and provide these resources to ArgoCD which is running within our cluster so that it can deploy those.
+
+## Deploying Kustomize resources to ArgoCD
+
+Again, make sure that you are connected to your Kubernetes cluster that we set up at the beginning and logged into ArgoCD.
+
+Our example will live in the kustomize namespace. Let's go ahead and create the namespace in our cluster:
+
+```yaml
+kubectl create ns kustomize
+```
+
+I will show you two ways to deploy your Kustomize file. The first time, we are going to use the CLI and reference our GitHub repository — specifically, the kustomize branch. 
+
+```yaml
+argocd app create react-app --repo https://github.com/AnaisUrlichs/react-article-display.git --revision kustomize --path ./kustomization --dest-server htt
+ps://kubernetes.default.svc --dest-namespace kustomize
+```
+
+Next, we want to sync our deployment that is managed by ArgoCD with the resources specified in our manifests.yaml. For this, go ahead and run:
+
+```
+argocd app sync react-app
+```
+
+Lastly, we can check the status of our deployment through the following command:
+
+```yaml
+argocd app get react-app
+```
+
+Like we have seen in previous videos. ArgoCD will continuously monitor our resources in our git repository for potential changes.
+
+Every time you create a new kustomize.yaml file and the kustomize.yaml file changes, ArgoCD will detect those changes and make updates to our deployments.
+
+Note that ArgoCD allows you to mention specific Kustomize tags that you can find under the following documentation: 
+
+[https://argoproj.github.io/argo-cd/user-guide/kustomize/](https://argoproj.github.io/argo-cd/user-guide/kustomize/)
+
+You could set-up specific build options per kustomize build version such as the one below:
+
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+  namespace: argocd
+  labels:
+    app.kubernetes.io/name: argocd-cm
+    app.kubernetes.io/part-of: argocd
+data:
+    kustomize.buildOptions: --load_restrictor none
+    kustomize.buildOptions.v3.9.1: --output /tmp
+```
+
+These will be applied when you generate new Kustomize files.
+
+## Additional Resources
+
+This presentation on how Kustomize is used at Lyft [https://youtu.be/ahMIBxufNR0](https://youtu.be/ahMIBxufNR0)
