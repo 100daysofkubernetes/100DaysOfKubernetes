@@ -3641,34 +3641,34 @@ POPEYE_REPORT_DIR=/mnt/e/Kubernetes/ popeye --save --out html --output-file repo
 </code></pre>
 <p>We should not see any more pods listed.</p>
 <h1 id="terminology-primer"><a class="header" href="#terminology-primer">Terminology Primer</a></h1>
-<p>This section is intended as a quick primer to get you up to speed with the various terms and acronyms that you are likely to encounter as you begin your Kubernetes journey. This is by no means an exhaustive list and it will certainly evolve over time.</p>
+<p>This section is intended as a quick primer to get you up to speed with the various terms and acronyms that you are likely to encounter as you begin your Kubernetes journey. This is by no means an exhaustive list and it will certainly evolve.</p>
 <ul>
 <li>
-<p><strong>Containers:</strong> Containers are a standard package of software that allows you to bundle (or package) an application's code, dependencies, and configuration into a single object which can then be deployed in any environment. Containers isolate the software from it's uderlying environment.</p>
+<p><strong>Containers:</strong> Containers are a standard package of software that allows you to bundle (or package) an application's code, dependencies, and configuration into a single object which can then be deployed in any environment. Containers isolate the software from its underlying environment.</p>
 </li>
 <li>
-<p><strong>Container Image:</strong> According to <a href="https://www.docker.com/resources/what-container">Docker</a>, a Container Image <em>&quot;is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.&quot;</em> Container Images become Containers at runtime.</p>
+<p><strong>Container Image:</strong> According to <a href="https://www.docker.com/resources/what-container">Docker</a>, a Container Image <em>&quot;is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries, and settings.&quot;</em> Container Images become Containers at runtime.</p>
 </li>
 <li>
 <p><strong>Container Registry:</strong> A container registry is a repository for storing all of your container images. Examples of containers registries are: 'Azure Container Registry', 'Docker Hub', and 'Amazon Elastic Container Registry'.</p>
 </li>
 <li>
-<p><strong>Docker:</strong> Docker is an open-source platform used for automating the deployment of containerised applications.</p>
+<p><strong>Docker:</strong> Docker is an open-source platform used for automating the deployment of containerized applications.</p>
 </li>
 <li>
-<p><strong>Kubernetes:</strong> Also know as <strong>K8s</strong>, Kubernetes is an open-source system for automating the deployment, scaling, and management of containerised applications. Please see <a href="https://kubernetes.io/">kubernetes.io</a> for more details. It could also be thought of as a 'Container Orchestrator'.</p>
+<p><strong>Kubernetes:</strong> Also know as <strong>K8s</strong>, Kubernetes is an open-source system for automating the deployment, scaling, and management of containerized applications. Please see <a href="https://kubernetes.io/">kubernetes.io</a> for more details. It could also be thought of as a 'Container Orchestrator'.</p>
 </li>
 <li>
-<p><strong>Control Plane:</strong> The control plane is the container orchestration layer. It exposes an API which allows you to manage your cluster and it's resources.</p>
+<p><strong>Control Plane:</strong> The control plane is the container orchestration layer. It exposes an API that allows you to manage your cluster and its resources.</p>
 </li>
 <li>
-<p><strong>Namespaces:</strong> Namespaces are units of organisation. They allow you to group related resources.</p>
+<p><strong>Namespaces:</strong> Namespaces are units of the organization. They allow you to group related resources.</p>
 </li>
 <li>
-<p><strong>Nodes:</strong> Nodes are worker machines in Kubernetes. Nodes can be virtual or physical. Kubernetes runs workloads by placing containers into Pods which run on Nodes. You will typically have multiple nodes in your Kubernetes cluster.</p>
+<p><strong>Nodes:</strong> Nodes are worker machines in Kubernetes. Nodes can be virtual or physical. Kubernetes runs workloads by placing containers into Pods that run on Nodes. You will typically have multiple nodes in your Kubernetes cluster.</p>
 </li>
 <li>
-<p><strong>Pods:</strong> Pods are the smallest deployable unit of compute that you can create and manage in Kubernetes. A pod is a group of one or more containers.</p>
+<p><strong>Pods:</strong> Pods are the smallest deployable unit of computing that you can create and manage in Kubernetes. A pod is a group of one or more containers.</p>
 </li>
 <li>
 <p><strong>Service:</strong> A Service in Kubernetes is a networking abstraction for Pod access. It handles the network traffic to a Pod or set of Pods.</p>
@@ -3683,7 +3683,7 @@ POPEYE_REPORT_DIR=/mnt/e/Kubernetes/ popeye --save --out html --output-file repo
 <p><strong>Kubectl:</strong> Kubectl is a command-line tool for interacting with a Kubernetes API Server to manage your Cluster.</p>
 </li>
 <li>
-<p><strong>etcd:</strong> Etcd is a key value store that Kubernetes uses to store Cluster data.</p>
+<p><strong>etcd:</strong> Etcd is a key-value store that Kubernetes uses to store Cluster data.</p>
 </li>
 <li>
 <p><strong>Ingress:</strong> An object that manages external access to the services running on the Cluster.</p>
