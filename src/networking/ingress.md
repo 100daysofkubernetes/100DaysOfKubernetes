@@ -12,7 +12,7 @@
 Ingress is responsible for managing the external access to our cluster. Whereby it manages
 
 - forwarding rules based on paths and domains
-- SSl termination
+- SSL termination
 - and several other features.
 
 The API provided by Ingress allows us to replace an external proxy with a loadbalancer.
@@ -96,7 +96,7 @@ If your application's service is set to NodePort, you will want to change it bac
 What happens when we create a new Ingress resource?
 
 1. kubectl will send a request to the API Server of our cluster requesting the creation of a new Ingress resource
-2. The ingress controller is consistently checking the cluster to see if there is a new ingress resource
+2. The ingress controller is constantly checking the cluster to see if there is a new ingress resource
 3. Once it sees that there is a new ingress resource, it will configure its loadbalancer 
 
 Ingress is a kind of service that runs on all nodes within your cluster. As long as requests match any of the rules defined within Ingress, Ingress will forward the request to the respective service.
