@@ -148,7 +148,7 @@ curl -H "Host: 2.0.go-demo-2.com" \
 
 ### Deleting resources
 
-It can be really annoying to have to delete all objects one by one. What we can do instead is to delete all resources within a namespace at one 
+It can be really annoying to have to delete all objects one by one. What we can do instead is to delete all resources within a namespace all at once 
 
 ```jsx
 kubectl delete ns testing
