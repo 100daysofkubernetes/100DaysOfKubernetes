@@ -41,7 +41,7 @@ More information on Kubernetes deployments
 - A deployment is a Kubernetes object that makes it possible to manage multiple, identical pods
 - Using deployments, it is possible to automate the process of creating, modifying and deleting pods — it basically manages the lifecycle of your application
 - Whenever a new object is created, Kubernetes will ensure that this object exist
-- If you try to set-up pods manually, it can lead to human error, using deployments
+- If you try to set-up pods manually, it can lead to human error. On the other hand, using deployments is a better way to prevent human errors. 
 - The difference between a deployment and a service is that a deployment ensures that a set of pods keeps running by creating pods and replacing broken prods with the resource defined in the template. In comparison, a service is used to allow a network to access the running pods.
 
 [Deployments allow you to](https://www.redhat.com/en/topics/containers/what-is-kubernetes-deployment)
