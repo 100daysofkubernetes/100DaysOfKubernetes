@@ -55,7 +55,7 @@ A list of related learning resources. Different to '100Days Resources', these do
 
 **Example Notes**
 
-This section provides an introduction to the topics. The goal is to advance each in topic over time. 
+This section provides an introduction to the topics. The goal is to advance in each topic over time. 
 When you are first time learning about a topic, it is usually best to take your own notes but sometimes having a starting point and examples is helpful.
 
 ## Core Maintainers
