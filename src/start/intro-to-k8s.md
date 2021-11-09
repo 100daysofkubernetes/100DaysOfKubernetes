@@ -77,9 +77,7 @@ Pod ⇒ the smallest unit that you, as a Kubernetes user will configure
 
 Note that we don't actually create containers inside the Kubernetes cluster but we work with the pods that are an abstraction layer over the containers. Pods manage the containers without our intervention
 
-However pods can die very frequently
-
-- Whenever a pod dies, it will be recreated and it will get a new IP address
+In case a pod dies, it can be configured to recreate (as per restart policy) and it will get a new IP address. 
 
 A service is used as an alternative for a pods IP address. Resulting, there is a service that sits in front of each pod that abstracts away the dynamic IP address. Resulting, the lifecycle of a pod and the IP address are not tied to each other-
 
