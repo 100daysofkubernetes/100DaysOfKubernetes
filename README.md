@@ -4,10 +4,10 @@
 
 This book is for everyone who wants to get started learning about Kubernetes. 
 
-The goal is to 
+The goal is to;
 * provide a learning journey; answering "where do I get started and find resources"
 * advance the content over time with the help of community contributions
-* include an uptodated and comprehensive collection of resources from blogs posts over video content
+* include an up-to-date and comprehensive collection of resources from blogs posts over video content
 * highlight community contributions right from the start
 
 ## Usage
@@ -55,7 +55,7 @@ A list of related learning resources. Different to '100Days Resources', these do
 
 **Example Notes**
 
-This section provides an introduction to the topics. The goal is to advance each topics over time. 
+This section provides an introduction to the topics. The goal is to advance in each topic over time. 
 When you are first time learning about a topic, it is usually best to take your own notes but sometimes having a starting point and examples is helpful.
 
 ## Core Maintainers
