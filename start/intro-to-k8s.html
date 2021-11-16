@@ -235,10 +235,7 @@
 <li>Each Pod has its own IP address — thus, each pod is its own self-containing server. This allows pods to communicate with each other — through their internal IP addresses</li>
 </ul>
 <p>Note that we don't actually create containers inside the Kubernetes cluster but we work with the pods that are an abstraction layer over the containers. Pods manage the containers without our intervention</p>
-<p>However pods can die very frequently</p>
-<ul>
-<li>Whenever a pod dies, it will be recreated and it will get a new IP address</li>
-</ul>
+<p>In case a pod dies, it can be configured to recreate (as per restart policy) and it will get a new IP address. </p>
 <p>A service is used as an alternative for a pods IP address. Resulting, there is a service that sits in front of each pod that abstracts away the dynamic IP address. Resulting, the lifecycle of a pod and the IP address are not tied to each other-</p>
 <p>If a pod behind the service dies, it gets recreated.</p>
 <p>A service has two main functions:</p>
