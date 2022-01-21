@@ -19,11 +19,11 @@ Here is a quick summary of what a Pod is and its responsibilities:
 - In our nodes, and within our Kubernetes cluster, the smallest unit that we can work with are pods.
 - Containers are part of a larger object, which is the pod. We can have one or multiple containers within a pod.
 - Each container within a pod share an IP address, storage and namespace — each container usually has a distinct role inside the pod.
-- Note that pods usually operate on a higher level than containers; there are more of an abstraction of the processes within a container than the container itself.
+- Note that pods usually operate on a higher level than containers; they are more of an abstraction of the processes within a container than the container itself.
 - A pod can also run multiple containers; all containers are started in parallel ⇒ this makes it difficult to know which process started before another.
 - Usually, one pod is used per container process; reasons to run two containers within a pod might be logging purposes.
-- *nitContainers* can be used to ensure some containers are ready before others in a pod. To support a single process running in a container, you may need logging, a proxy, or special adapter. These tasks are often handled by other containers in the same Pod.
-- Usually each pod has one IP address
+- *initContainers* can be used to ensure some containers are ready before others in a pod. To support a single process running in a container, you may need logging, a proxy, or special adapter. These tasks are often handled by other containers in the same Pod.
+- Usually each pod has one IP address.
 - You may find the term *sidecar* for a container dedicated to performing a helper task, like handling logs and responding to requests, as the primary application container may have this ability.
 
 **Running multiple containers in one pod**
