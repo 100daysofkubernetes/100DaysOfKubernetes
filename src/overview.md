@@ -44,11 +44,11 @@ We have a channel in this [Discord channel](https://discord.gg/bs2sy3Ppm7) -- co
 
 You can find more information on contributions in the [README](https://github.com/100daysofkubernetes/100DaysOfKubernetes) of this GitHub repository.
 
-## Structure of  the book
+## Structure of the book
 
 The book is divided into several higher-level topics. Each topic has several sub-topics that are individual pages or chapters.
 
-Thos chapters have a similar structure:
+Those chapters have a similar structure:
 
 **Title**
 
