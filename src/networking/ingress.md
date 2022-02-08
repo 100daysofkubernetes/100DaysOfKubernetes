@@ -59,7 +59,7 @@ If you receive an empty output, you might have to wait a little bit longer for I
 Here is the YAML definition of our Ingress resource
 
 ```jsx
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: react-application
@@ -72,9 +72,12 @@ spec:
   - http:
       paths:
       - path: /demo
+        pathType: ImplementationSpecific
         backend:
-          serviceName: react-application
-          servicePort: 8080
+          service:
+            name: react-application
+            port:
+              number: 8080
 ```
 
 - The annotation section is used to provide additional information to the Ingress controller.
