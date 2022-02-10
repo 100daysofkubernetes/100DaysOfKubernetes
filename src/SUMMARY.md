@@ -49,6 +49,7 @@
 
 # Advanced Topics
 - [Kubernetes Operators](./advanced/operators.md)
+- [RBAC explained](./advanced/rbac.md)
 
 # Tutorials and Practice
 - [Serverless](./tutorials/serverless.md)
