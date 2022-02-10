@@ -1206,7 +1206,7 @@ kubectl delete -f svc/go-demo-2-rs.yml
 </code></pre>
 <p>If you receive an empty output, you might have to wait a little bit longer for Ingress to start.</p>
 <p>Here is the YAML definition of our Ingress resource</p>
-<pre><code class="language-jsx">apiVersion: extensions/v1beta1
+<pre><code class="language-jsx">apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: react-application
@@ -1219,9 +1219,12 @@ spec:
   - http:
       paths:
       - path: /demo
+        pathType: ImplementationSpecific
         backend:
-          serviceName: react-application
-          servicePort: 8080
+          service:
+            name: react-application
+            port:
+              number: 8080
 </code></pre>
 <ul>
 <li>The annotation section is used to provide additional information to the Ingress controller.</li>
