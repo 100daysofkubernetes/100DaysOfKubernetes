@@ -333,7 +333,7 @@ When you are first time learning about a topic, it is usually best to take your 
 <ul>
 <li>Managed by several operators and controllers — will look at operators and controllers later one. <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/operator/">Operators</a> make use of custom resources to manage an application and their components.</li>
 <li>&quot;Each controller interrogates the kube-apiserver for a particular object state, modifying the object until the declared state matches the current state.&quot; In short, <a href="https://kubernetes.io/docs/concepts/architecture/controller/">controllers</a> are used to ensure a process is happening in the desired way.</li>
-<li>&quot;The <a href="https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/">ReplicaSet</a> is a controller which deploys and restarts containers, Docker by default, until the requested number of containers is running.&quot; In short, its purpose is to ensure a specific number of nodes are running.</li>
+<li>&quot;The <a href="https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/">ReplicaSet</a> is a controller which deploys and restarts containers, Docker by default, until the requested number of containers is running.&quot; In short, its purpose is to ensure a specific number of pods are running.</li>
 </ul>
 <p>Note that those concepts are details in further sections of the book.</p>
 <p>There are several other API objects which can be used to deloy pods. A DaemonSet will ensure that a single pod is deployed on every node. These are often used for logging and metrics. A StatefulSet can be used to deploy pods in a particular order, such that following pods are only deployed if previous pods report a ready status.</p>
