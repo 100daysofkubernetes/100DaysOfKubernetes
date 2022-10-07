@@ -130,7 +130,7 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 ```
 
 ```jsx
-helm show values rometheus-community/prometheus-mongodb-exporter > values.yaml
+helm show values prometheus-community/prometheus-mongodb-exporter > values.yaml
 ```
 
 We need to mondify the values provided in the values.yaml file as follows:
