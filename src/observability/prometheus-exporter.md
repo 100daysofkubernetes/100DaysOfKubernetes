@@ -44,7 +44,7 @@ kubectl get crd
 You can take a look at a specific one as follows.
 
 ```jsx
-kubectl get prometheus.monitoring.coreos.com -o yalm
+kubectl get prometheus.monitoring.coreos.com -o yaml
 ```
 
 ## Set-up MongoDB
