@@ -261,7 +261,7 @@ kubectl get pods
 <p>Next, we are going to add the Helm Mongo DB exporter</p>
 <pre><code class="language-jsx">helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 </code></pre>
-<pre><code class="language-jsx">helm show values rometheus-community/prometheus-mongodb-exporter &gt; values.yaml
+<pre><code class="language-jsx">helm show values prometheus-community/prometheus-mongodb-exporter &gt; values.yaml
 </code></pre>
 <p>We need to mondify the values provided in the values.yaml file as follows:</p>
 <pre><code class="language-jsx">mongodb:
