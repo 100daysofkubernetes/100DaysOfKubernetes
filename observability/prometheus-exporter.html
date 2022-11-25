@@ -198,7 +198,7 @@
 <pre><code class="language-jsx">kubectl get crd
 </code></pre>
 <p>You can take a look at a specific one as follows.</p>
-<pre><code class="language-jsx">kubectl get prometheus.monitoring.coreos.com -o yalm
+<pre><code class="language-jsx">kubectl get prometheus.monitoring.coreos.com -o yaml
 </code></pre>
 <h2 id="set-up-mongodb"><a class="header" href="#set-up-mongodb">Set-up MongoDB</a></h2>
 <p>Now, we want to install a MongoDB image on our cluster and tell Prometheus to monitor it's endpoint. However, MongoDB is one of those images that relies on an exporter for its service to be visible to Prometheus. Think about it this way, Prometheus needs the help of and Exporter to know where MongoDB is in our cluster — like a pointer.</p>
