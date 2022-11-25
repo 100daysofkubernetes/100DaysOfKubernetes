@@ -140,6 +140,7 @@ mongodb:
   uri: "mongodb://mongodb-service:27017"
 
 serviceMonitor:
+  enabled: true
   additionalLabels:
     release: prometheus
 ```
