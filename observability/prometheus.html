@@ -1,0 +1,375 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Prometheus - 100 Days Of Kubernetes</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Overview</li><li class="chapter-item expanded "><a href="../overview.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../contributors.html"><strong aria-hidden="true">2.</strong> Contributors</a></li><li class="chapter-item expanded affix "><li class="part-title">Let's get started</li><li class="chapter-item expanded "><a href="../start/intro-to-k8s.html"><strong aria-hidden="true">3.</strong> Introduction to Kubernetes</a></li><li class="chapter-item expanded "><a href="../start/architecture-overview.html"><strong aria-hidden="true">4.</strong> Kubernetes Architecture</a></li><li class="chapter-item expanded "><a href="../start/pods.html"><strong aria-hidden="true">5.</strong> Kubernetes Pods</a></li><li class="chapter-item expanded "><a href="../start/set-up-cluster.html"><strong aria-hidden="true">6.</strong> Setup Kubernetes Cluster</a></li><li class="chapter-item expanded "><a href="../start/run-pod.html"><strong aria-hidden="true">7.</strong> Run Pods</a></li><li class="chapter-item expanded "><a href="../start/replicas.html"><strong aria-hidden="true">8.</strong> Replica Set</a></li><li class="chapter-item expanded "><a href="../start/deployment.html"><strong aria-hidden="true">9.</strong> Kubernetes Deployment</a></li><li class="chapter-item expanded "><a href="../start/namespaces.html"><strong aria-hidden="true">10.</strong> Namespaces</a></li><li class="chapter-item expanded "><a href="../start/configmaps.html"><strong aria-hidden="true">11.</strong> ConfigMaps</a></li><li class="chapter-item expanded affix "><li class="part-title">Networking</li><li class="chapter-item expanded "><a href="../networking/service.html"><strong aria-hidden="true">12.</strong> Kubernetes Service</a></li><li class="chapter-item expanded "><a href="../networking/ingress.html"><strong aria-hidden="true">13.</strong> Kubernetes Ingress</a></li><li class="chapter-item expanded "><a href="../networking/servicemesh.html"><strong aria-hidden="true">14.</strong> Service Mesh</a></li><li class="chapter-item expanded affix "><li class="part-title">Storage</li><li class="chapter-item expanded "><a href="../storage/volumes.html"><strong aria-hidden="true">15.</strong> Kubernetes Volumes</a></li><li class="chapter-item expanded affix "><li class="part-title">Kubernetes Clusters Overview and Use</li><li class="chapter-item expanded "><a href="../kubernetes-clusters/kind.html"><strong aria-hidden="true">16.</strong> KinD Cluster</a></li><li class="chapter-item expanded "><a href="../kubernetes-clusters/k3s.html"><strong aria-hidden="true">17.</strong> K3s and K3sup</a></li><li class="chapter-item expanded affix "><li class="part-title">Templating & IaC</li><li class="chapter-item expanded "><a href="../templating/kustomize.html"><strong aria-hidden="true">18.</strong> Kustomize</a></li><li class="chapter-item expanded "><a href="../templating/terraform.html"><strong aria-hidden="true">19.</strong> Terraform</a></li><li class="chapter-item expanded "><a href="../templating/crossplane.html"><strong aria-hidden="true">20.</strong> Crossplane</a></li><li class="chapter-item expanded affix "><li class="part-title">Helm</li><li class="chapter-item expanded "><a href="../helm/partone.html"><strong aria-hidden="true">21.</strong> Helm Part 1</a></li><li class="chapter-item expanded "><a href="../helm/partwo.html"><strong aria-hidden="true">22.</strong> Helm Part 2</a></li><li class="chapter-item expanded "><a href="../helm/partthree.html"><strong aria-hidden="true">23.</strong> Helm Part 3</a></li><li class="chapter-item expanded affix "><li class="part-title">Cloud Native Tools and Platforms</li><li class="chapter-item expanded "><a href="../tools/k9s.html"><strong aria-hidden="true">24.</strong> k9s</a></li><li class="chapter-item expanded "><a href="../tools/knative.html"><strong aria-hidden="true">25.</strong> Knative</a></li><li class="chapter-item expanded "><a href="../tools/argo.html"><strong aria-hidden="true">26.</strong> GitOps and Argo</a></li><li class="chapter-item expanded "><a href="../tools/linkerd.html"><strong aria-hidden="true">27.</strong> Linkerd</a></li><li class="chapter-item expanded affix "><li class="part-title">Observability</li><li class="chapter-item expanded "><a href="../observability/prometheus.html" class="active"><strong aria-hidden="true">28.</strong> Prometheus</a></li><li class="chapter-item expanded "><a href="../observability/prometheus-exporter.html"><strong aria-hidden="true">29.</strong> Prometheus Exporter</a></li><li class="chapter-item expanded affix "><li class="part-title">Advanced Topics</li><li class="chapter-item expanded "><a href="../advanced/operators.html"><strong aria-hidden="true">30.</strong> Kubernetes Operators</a></li><li class="chapter-item expanded affix "><li class="part-title">Tutorials and Practice</li><li class="chapter-item expanded "><a href="../tutorials/serverless.html"><strong aria-hidden="true">31.</strong> Serverless</a></li><li class="chapter-item expanded "><a href="../tutorials/ingress-from-scratch.html"><strong aria-hidden="true">32.</strong> Ingress from scratch</a></li><li class="chapter-item expanded "><a href="../tutorials/istio-from-scratch.html"><strong aria-hidden="true">33.</strong> Istio from scratch</a></li><li class="chapter-item expanded "><a href="../tutorials/deploy-to-civo.html"><strong aria-hidden="true">34.</strong> Deploy to CIVO</a></li><li class="chapter-item expanded affix "><li class="part-title">Troubleshooting K8s</li><li class="chapter-item expanded "><a href="../troubleshooting/crashloopbackoff.html"><strong aria-hidden="true">35.</strong> CrashLoopBackOff</a></li><li class="chapter-item expanded affix "><li class="part-title">Glossary</li><li class="chapter-item expanded "><a href="../glossary/terminologyprimer.html"><strong aria-hidden="true">36.</strong> Terminology Primer</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">100 Days Of Kubernetes</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        <a href="https://github.com/100daysofkubernetes/100DaysOfKubernetes" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="prometheus"><a class="header" href="#prometheus">Prometheus</a></h1>
+<h1 id="100days-resources"><a class="header" href="#100days-resources">100Days Resources</a></h1>
+<ul>
+<li><a href="https://youtu.be/n4eF8EcgpZQ">Video by Anais Urlichs</a></li>
+<li>Add your blog posts, videos etc. related to the topic here!</li>
+</ul>
+<h1 id="learning-resources"><a class="header" href="#learning-resources">Learning Resources</a></h1>
+<ul>
+<li>Overview video <a href="https://youtu.be/nk3sk1LO7Bo">https://youtu.be/nk3sk1LO7Bo</a> quick</li>
+<li>Overview video <a href="https://youtu.be/sYMTY-SciUQ">https://youtu.be/sYMTY-SciUQ</a> long</li>
+<li>The Prometheus <a href="https://prometheus.io/docs/introduction/overview/">documentation</a></li>
+<li>The Grafana <a href="https://grafana.com/docs/?plcmt=top-nav&amp;cta=downloads">documentation</a></li>
+<li>Have a look at the different yaml files that encompass Pormetheus <a href="https://phoenixnap.com/kb/prometheus-kubernetes-monitoring">https://phoenixnap.com/kb/prometheus-kubernetes-monitoring</a></li>
+<li>Challenges using Prometheus at scale <a href="https://sysdig.com/blog/challenges-scale-prometheus/">https://sysdig.com/blog/challenges-scale-prometheus/</a></li>
+<li>Another quick tutorial <a href="https://dev.to/rayandasoriya/kubernetes-monitoring-with-prometheus-2l7k">https://dev.to/rayandasoriya/kubernetes-monitoring-with-prometheus-2l7k</a></li>
+</ul>
+<p>This is a really useful series by Sysdig</p>
+<ol>
+<li><a href="https://sysdig.com/blog/kubernetes-monitoring-prometheus/">https://sysdig.com/blog/kubernetes-monitoring-prometheus/</a></li>
+<li><a href="https://sysdig.com/blog/kubernetes-monitoring-with-prometheus-alertmanager-grafana-pushgateway-part-2/">https://sysdig.com/blog/kubernetes-monitoring-with-prometheus-alertmanager-grafana-pushgateway-part-2/</a></li>
+<li><a href="https://sysdig.com/blog/kubernetes-monitoring-prometheus-operator-part3/">https://sysdig.com/blog/kubernetes-monitoring-prometheus-operator-part3/</a></li>
+</ol>
+<h1 id="example-notes"><a class="header" href="#example-notes">Example Notes</a></h1>
+<p>Prometheus is a time-series database that came out of soundcloud to monitor our processes that might span various different systems. It is basically a tool used to monitor the performance of your infrastructure. </p>
+<ul>
+<li>DevOps needs more automation.</li>
+<li>Want to be notified about storage issues.</li>
+<li>Part of the CNCF landscape</li>
+</ul>
+<p>If you have hundred of microservices, you have to have complex monitoring in place. You want to know when your application is not running as expected.</p>
+<p>Note that what we want to measure and how we want to measure it highly depends on the type of our application.</p>
+<p>Why do we want to use Prometheus for our monitoring on Kubernetes?</p>
+<ol>
+<li>Key-value pair based — similar to how Kubernetes metadata organises labels</li>
+<li>&quot;Prometheus is a good fit for microservices because you just need to expose a metrics port, and don’t need to add too much complexity or run additional services. Often, the service itself is already presenting a HTTP interface, and the developer just needs to add an additional path like /metrics.&quot; <a href="https://sysdig.com/blog/kubernetes-monitoring-prometheus/">Source</a></li>
+</ol>
+<p><strong>At its core component</strong></p>
+<ul>
+<li>Prometheus server
+<ul>
+<li>Storage: Time series database</li>
+<li>Data Retrieval Worker</li>
+<li>Http server: accepts queries</li>
+</ul>
+</li>
+<li>Prometheus has an Altertmanager : &quot;The AlertManager receives metrics from the Prometheus server and then is responsible for grouping and making sense of the metrics and then forwarding an alert to your chosen notification system&quot;</li>
+</ul>
+<h2 id="how-does-it-work"><a class="header" href="#how-does-it-work">How does it work?</a></h2>
+<p>Prometheus operates under the pull-based model. By sending http requests to the endpoint it is supposed to monitor, the target, it scrapes information from that target. The response to this scrape request is stored and parsed in storage along with the metrics for the scrape itself.</p>
+<p>Metrics have type and help attributes</p>
+<ul>
+<li>help: what the metrics is</li>
+<li>type: metrics type</li>
+</ul>
+<p>Prometheus pulls data from end-points — can easily detect whether a service is up and running e.g. if the end-point does not respond.</p>
+<p>Vs. push system — applications and servers are responsible for pushing data — this creates a high traffic load. In this case, you might be overloading your infrastructure. </p>
+<p>If Pormetheus is unable to access the labels of your application, an exporter can be used. There are a lot of different exporters. The exporter you use will depend on the type of application that you want to expose data of.</p>
+<p>Here is one overview from 2018 — the overview provided on the official documentation looks a bit more complex than this one. Note the direction of the arrows.</p>
+<p>Source: <a href="https://youtu.be/sYMTY-SciUQ">https://youtu.be/sYMTY-SciUQ</a></p>
+<p>Additional notes</p>
+<ul>
+<li>You define what targets it is supposed to scape and the interval it should scape at in the yaml file.</li>
+<li>Expects metrics to be available at &quot;/metrics&quot;.</li>
+<li>Usually, the yaml file has a default job that can be overwritten with custom jobs.</li>
+<li>Prometheus has something called prompt ql — which is the prometheus query language.</li>
+<li>Grafana is used to pull data out of prometheus.</li>
+<li>By default Prometheus comes with a UI that can be opened on port 9090</li>
+</ul>
+<p>Some labels are provided from the application itself and others come directly from the Prometheus server since it knows what it scrapes.</p>
+<p>Things can go wrong for a variety of reasons, such as</p>
+<ul>
+<li><strong>Disk Full</strong> <strong>:</strong> No new data can be store</li>
+<li><strong>Software Bug :</strong> Request Errors</li>
+<li><strong>High Temperature :</strong> Hardware Failure</li>
+<li><strong>Network Outage :</strong> Services cannot communicate</li>
+<li><strong>Low Memory Utilization :</strong> Money wasted</li>
+</ul>
+<p>Note that you can integrate long-term storage with Prometheus but usually if a node fails, the data received until that point will be gone too.</p>
+<p>You can expose to Prometheus the following</p>
+<ul>
+<li><em><strong>node</strong></em></li>
+<li><em><strong>endpoint</strong></em></li>
+<li><em><strong>service</strong></em></li>
+<li><em><strong>pod</strong></em></li>
+<li><em><strong>ingress</strong></em></li>
+</ul>
+<p><strong>Some of the downsides using Prometheus at scale</strong></p>
+<ul>
+<li>&quot;It doesn’t allow global visibility. Several production clusters would make this a new requirement.&quot;</li>
+<li>&quot;Operations can be cumbersome and time consuming.&quot;</li>
+<li>&quot;This model can complicate governance and regulatory compliance&quot;</li>
+<li>&quot;Prometheus is not designed to be scaled horizontally. Once you hit the limit of vertical scaling, you’re done.&quot;</li>
+</ul>
+<p><a href="https://sysdig.com/blog/challenges-scale-prometheus/">Source</a></p>
+<h2 id="install"><a class="header" href="#install">Install</a></h2>
+<p>To learn more about Prometheus, this repository is really great <a href="https://github.com/yolossn/Prometheus-Basics">https://github.com/yolossn/Prometheus-Basics</a></p>
+<p>Using Prometheus without Kubernetes on a node.js application</p>
+<p><a href="https://github.com/csantanapr/prometheus-nodejs-tutorial">https://github.com/csantanapr/prometheus-nodejs-tutorial</a></p>
+<p>Following this tutorial to set-up both Prometheus and Grafana </p>
+<p><a href="https://grafana.com/docs/grafana-cloud/quickstart/prometheus_operator/">https://grafana.com/docs/grafana-cloud/quickstart/prometheus_operator/</a></p>
+<p>Prometheus is based on a Kubernetes Operator. Let's take a closer look at Kubernetes Operators. In short, they are used to develop tools and resources on top of Kubernetes. You can use Kubernetes Operators to create new custom resources. </p>
+<p><strong>Installation</strong></p>
+<p>The Prometheus operator is provided. A deployment, a required ClusterRole with associated ClusterRoleBinding and a ServiceAccount are defined. We can create all of those through the following tutorial.</p>
+<ul>
+<li>Blog post on using Prometheus and Grafana <a href="https://medium.com/devops-dudes/install-prometheus-on-ubuntu-18-04-a51602c6256b">https://medium.com/devops-dudes/install-prometheus-on-ubuntu-18-04-a51602c6256b</a></li>
+</ul>
+<p>Install the Prometheus operator — I am going to use Helm because it is probably the most straightforward to use vs. any of the other options.</p>
+<pre><code class="language-jsx">helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+
+helm repo update
+
+helm install prom prometheus-community/kube-prometheus-stack
+</code></pre>
+<p>To access the Prometheus UI, use the following </p>
+<pre><code class="language-jsx">kubectl port-forward prometheus-prometheus-prometheus-oper-prometheus-0 9090
+</code></pre>
+<p>Note that the prometheus might not be in namespace — if you have installed it in a namespace, make sure to specify the namespace.</p>
+<p>Now do the same with the Grafana Dashboard</p>
+<pre><code class="language-jsx">kubectl port-forward prometheus-grafana-5c5885d488-b9mlj 3000
+</code></pre>
+<p>Here again, the resource might or might not be in a namespace.</p>
+<p>To login, you have to get your password etc.</p>
+<pre><code class="language-jsx">kubectl get secret --namespace prometheus prometheus-grafana -o yaml
+</code></pre>
+<p>username: admin</p>
+<p>password: prom-operator</p>
+<p>Note again that you might have to replace the values.</p>
+<p>Now you can access the metrics. Have a look at the following video for a detailed overview:</p>
+<p><a href="https://youtu.be/QoDqxm7ybLc">https://youtu.be/QoDqxm7ybLc</a></p>
+<p>We want to monitor an application, which we are going to do by following this Readme:</p>
+<p><a href="https://github.com/prometheus-operator/prometheus-operator/blob/master/Documentation/user-guides/getting-started.md">https://github.com/prometheus-operator/prometheus-operator/blob/master/Documentation/user-guides/getting-started.md</a></p>
+<p>To access the deployment in yaml format</p>
+<pre><code class="language-jsx">kubectl describe deployment prometheus-prometheus-oper-operator &gt; oper.yaml
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../tools/linkerd.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../observability/prometheus-exporter.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../tools/linkerd.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../observability/prometheus-exporter.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
