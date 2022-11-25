@@ -34,6 +34,8 @@ Now you should be able to open the book on http://localhost:3000/
 2. Add your own resources to this book whether specific to 100Days or resources that help explain topics
 3. Help us enhance the notes for each topic
 
+If you create a PR, please add yourself to [the contributor list](https://github.com/100daysofkubernetes/100DaysOfKubernetes/blob/main/src/contributors.md).
+
 ## Structure of the book
 
 The book is divided into several higher-level topics. Each topic has several sub-topics that are individual pages or chapters.
