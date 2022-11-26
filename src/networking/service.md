@@ -82,7 +82,7 @@ The LoadBalancer is only useful when it is combined with the LoadBalancer of you
 The process when creating a new Service is something like this:
 
 1. First, we tell our API server within the master node in our cluster it should create a new service — in our case, this is done through kubectl commands.
-2. Within our cluster, inside the master node, we have an endpoint controller. This controller will watch our API server to see whether we want to create a new Service. Once it knows that we want to create a new API server, it will create an endpoint object.
+2. Within our cluster, inside the master node, we have an endpoint controller. This controller will watch our API server to see whether we want to create a new Service. Once it knows that we want to create a new service, it will create an endpoint object.
 3. The kube-proxy watches the cluster for services and enpoints that it can use to configure the access to our cluster. It will then make a new entry in its iptable that takes note of the new information.
 4. The Kube-DNS realises that there is a new service and will add the db’s record to the dns server (skydns).
 
