@@ -46,7 +46,7 @@ To use crossplane you initially need any type of Kubernetes Cluster — it could
 
 Crossplane combines custom resource definitions and custom controllers — those are both Kubernetes resources. So you install Kubernetes resources that are used to manage Crossplane.
 
-[https://crossplane.io/docs/v1.0/getting-started/install-configure.html#start-with-a-self-hosted-crossplane](https://crossplane.io/docs/v1.0/getting-started/install-configure.html#start-with-a-self-hosted-crossplane)
+[https://docs.crossplane.io/v1.10/getting-started/install-configure/](https://docs.crossplane.io/v1.10/getting-started/install-configure/)
 
 Prerequisites
 
