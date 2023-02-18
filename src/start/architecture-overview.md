@@ -21,7 +21,7 @@ Where does the orchestration from Kubernetes come in? These are some characteris
 
 Note that those concepts are details in further sections of the book.
 
-There are several other API objects which can be used to deloy pods. A DaemonSet will ensure that a single pod is deployed on every node. These are often used for logging and metrics. A StatefulSet can be used to deploy pods in a particular order, such that following pods are only deployed if previous pods report a ready status.
+There are several other API objects which can be used to deploy pods. A DaemonSet will ensure that a single pod is deployed on every node. These are often used for logging and metrics. A StatefulSet can be used to deploy pods in a particular order, such that following pods are only deployed if previous pods report a ready status.
 
 API objects can be used to know
 
