@@ -63,7 +63,7 @@ sudo snap install microk8s --classic
 
 However, also the Windows and Mac installation are quite straightforward so have a look at those on their website.
 
-Make sure that kubectl has access directly to your 
+Make sure that kubectl has access directly to your cluster.
 
 If you have multiple clusters configured, you can switch between them using your kubectl commands
 
