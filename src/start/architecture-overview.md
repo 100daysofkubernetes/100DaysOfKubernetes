@@ -15,13 +15,13 @@ We can divide the responsibilities within a Kubernetes cluster between a main no
 
 Where does the orchestration from Kubernetes come in? These are some characteristics that make up Kubernetes as a container orchestration system:
 
-- Managed by several operators and controllers — will look at operators and controllers later one. [Operators](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) make use of custom resources to manage an application and their components.
+- Managed by several operators and controllers — will look at operators and controllers later on. [Operators](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) make use of custom resources to manage an application and their components.
 - "Each controller interrogates the kube-apiserver for a particular object state, modifying the object until the declared state matches the current state." In short, [controllers](https://kubernetes.io/docs/concepts/architecture/controller/) are used to ensure a process is happening in the desired way.
 - "The [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) is a controller which deploys and restarts containers, Docker by default, until the requested number of containers is running." In short, its purpose is to ensure a specific number of pods are running.
 
 Note that those concepts are details in further sections of the book.
 
-There are several other API objects which can be used to deloy pods. A DaemonSet will ensure that a single pod is deployed on every node. These are often used for logging and metrics. A StatefulSet can be used to deploy pods in a particular order, such that following pods are only deployed if previous pods report a ready status.
+There are several other API objects which can be used to deploy pods. A DaemonSet will ensure that a single pod is deployed on every node. These are often used for logging and metrics. A StatefulSet can be used to deploy pods in a particular order, such that following pods are only deployed if previous pods report a ready status.
 
 API objects can be used to know
 

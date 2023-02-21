@@ -57,6 +57,7 @@ Additionally, Kubernetes is an essential part of
 - And worker nodes: contains Containers of different applications; here is where the actual work is happening
 
 Note that worker nodes are usually much bigger because they are running the containers. The master node will only run a selection of processes. 
+Note now master node is named as control plane.
 
 Each node will have multiple pods with containers running on them. 3 processes have to be present on all nodes
 
@@ -90,7 +91,7 @@ A service has two main functions:
 
 **How do we create those components**
 
-- All configuration goes through the master node — UI, API, CLI, all talk to the APi server within the master node — they send the configuration request to the API server
+- All configuration goes through the master node — UI, API, CLI, all talk to the API server within the master node — they send the configuration request to the API server
 - The configuration is usually in YAML format ⇒ a blue print for creating pods. The Kubernetes agents convert the YAML to JSON prior to persistence to the database.
 - The configuration of the requirements are in a declarative format. This will allow it to compare the desired state to the actual state (more on this later)
 
