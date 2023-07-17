@@ -72,7 +72,7 @@ spec:
         ports:
           - containerPort: 80
         imagePullPolicy: Always
-				env:
+	env:
             - name: CUSTOM_ENV_VARIABLE
               value: Value defined by Kustomize ❤️
 ```
