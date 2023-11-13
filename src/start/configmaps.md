@@ -6,6 +6,7 @@
 
 # Learning Resources
 - [https://matthewpalmer.net/kubernetes-app-developer/articles/ultimate-configmap-guide-kubernetes.html](https://matthewpalmer.net/kubernetes-app-developer/articles/ultimate-configmap-guide-kubernetes.html)
+- [https://spacelift.io/blog/kubernetes-configmap](https://spacelift.io/blog/kubernetes-configmap)
 
 # Example Notes
 
